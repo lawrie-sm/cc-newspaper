@@ -7,4 +7,5 @@ out/
 target/
 # Eclipse
 .settings/
+.DS_Store
 
