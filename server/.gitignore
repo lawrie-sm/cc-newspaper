@@ -1,0 +1,10 @@
+# Java
+*.class
+# IntelliJ IDEA
+.idea/
+out/
+# Spring & Eclipse
+target/
+# Eclipse
+.settings/
+
