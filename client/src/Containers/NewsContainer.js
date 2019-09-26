@@ -21,9 +21,9 @@ render(){
     <>
     <h1>NewsContainer</h1>
     <Header />
-    <CategoriesDropdown categories={this.state.categories} />
+    <CategoriesDropdown categories = {this.state.categories} />
     <Search />
-    <ArticleList headlines ={this.state.articles}/>
+    <ArticleList articles = {this.state.articles}/>
     </>
   )
 }

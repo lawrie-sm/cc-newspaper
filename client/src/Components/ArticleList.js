@@ -1,15 +1,17 @@
 import React from 'react';
 
-const ArticleList = ({headlines}) => {
-  const articles = headlines.map((article, index) => {
+const ArticleList = ({articles}) => {
+  const values = articles.map((value, index) => {
     return(
-      <option value={article}>{article}</option>
+      <li>{value}</li>
     )
   })
   return(
     <>
     <h3>ArticleList</h3>
-    {articles}
+    <ul>
+    {values}
+    </ul>
     </>
   )
 }
