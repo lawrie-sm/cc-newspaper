@@ -2,6 +2,7 @@ package com.codeclan.news.news.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -24,10 +25,10 @@ public class Author {
 
     public Author() {}
 
-    public Author(String title, String name, List<Article> articles) {
+    public Author(String title, String name) {
         this.title = title;
         this.name = name;
-        this.articles = articles;
+        this.articles = new ArrayList<>();
     }
 
     public long getId() {

@@ -1,4 +1,11 @@
 package com.codeclan.news.news.repositories;
+import com.codeclan.news.news.models.Author;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface AuthorRepository {
+import java.util.List;
+
+@Repository
+public interface AuthorRepository extends JpaRepository<Author, Long> {
+    List<Author> findAll();
 }
