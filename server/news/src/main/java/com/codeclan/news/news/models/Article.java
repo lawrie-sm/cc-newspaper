@@ -1,7 +1,10 @@
 package com.codeclan.news.news.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 @Entity
 @Table(name = "articles")
@@ -20,9 +23,10 @@ public class Article {
     @Column(name = "text")
     private String text;
 
-    //TODO: Use proper date objects
+    @JsonFormat(pattern="yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
     @Column(name="date")
-    private String date;
+    private Calendar date;
 
     @JsonIgnoreProperties("articles")
     @ManyToOne
@@ -31,7 +35,7 @@ public class Article {
 
     public Article() {}
 
-    public Article(String title, String summary, String text, Author author, String date) {
+    public Article(String title, String summary, String text, Author author, Calendar date) {
         this.title = title;
         this.summary = summary;
         this.text = text;
@@ -79,11 +83,11 @@ public class Article {
         this.author = author;
     }
 
-    public String getDate() {
+    public Calendar getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Calendar date) {
         this.date = date;
     }
 }

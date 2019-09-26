@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Long> {
-    List<Article> findAll();
+    List<Article> findAllByOrderByDateDesc();
 }
