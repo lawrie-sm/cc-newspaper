@@ -1,8 +1,11 @@
 import React from 'react';
 import './App.css';
+import NewsContainer from './Containers/NewsContainer'
 
 function App() {
-  return (<h1>Header</h1>);
+  return (
+    <NewsContainer />
+  );
 }
 
 export default App;
