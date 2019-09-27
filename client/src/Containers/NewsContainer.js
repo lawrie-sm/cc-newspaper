@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Header from '../Components/Header';
 import CategoriesDropdown from '../Components/CategoriesDropdown';
-// import Search from '../Components/Search';
 import ArticleList from '../Components/ArticleList';
 
 class NewsContainer extends Component {
@@ -25,10 +24,12 @@ constructor(props) {
     .catch(err => console.error);
  }
 
+
 render(){
   return(
     <>
     <h1>NewsContainer</h1>
+    <Header />
     <CategoriesDropdown categories = {this.state.categories} />
     <ArticleList articles = {this.state.articles}/>
     </>
@@ -37,7 +38,3 @@ render(){
 }
 
 export default NewsContainer;
-
-// <Header />
-// <CategoriesDropdown categories = {this.state.categories} />
-//
