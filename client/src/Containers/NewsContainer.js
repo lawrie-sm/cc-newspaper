@@ -12,7 +12,7 @@ constructor(props) {
   this.state = {
     articles: [],
     journalists: [],
-    categories: [1, 2, 3, 4, 5]
+    categories: [ "World", "UK", "Sport", "Culture", "Education"]
   };
 }
 
@@ -29,10 +29,10 @@ render(){
   return(
     <>
     <h1>NewsContainer</h1>
+    <CategoriesDropdown categories = {this.state.categories} />
     <ArticleList articles = {this.state.articles}/>
     </>
-  )
-}
+)}
 
 }
 

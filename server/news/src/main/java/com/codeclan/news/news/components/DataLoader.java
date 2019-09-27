@@ -2,6 +2,7 @@ package com.codeclan.news.news.components;
 
 import com.codeclan.news.news.models.Article;
 import com.codeclan.news.news.models.Author;
+import com.codeclan.news.news.properties.ArticleCategory;
 import com.codeclan.news.news.repositories.ArticleRepository;
 import com.codeclan.news.news.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,18 +29,17 @@ public class DataLoader implements ApplicationRunner {
                 "Big news summary",
                 "Big news text",
                 reg,
-                new GregorianCalendar(2019, Calendar.JANUARY, 10) {
-                });
+                new GregorianCalendar(2019, Calendar.JANUARY, 10),ArticleCategory.CULTURE );
         Article article2 = new Article("Small news",
                 "Small news summary",
                 "Small news text",
                 reg,
-                new GregorianCalendar(2019, Calendar.FEBRUARY, 10));
+                new GregorianCalendar(2019, Calendar.FEBRUARY, 10 ), ArticleCategory.SPORT);
         Article article3 = new Article("Other news",
                 "summary",
                 "text",
                 reg,
-                new GregorianCalendar(2019, Calendar.MARCH, 10));
+                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
         authorRepo.save(reg);
         articleRepo.save(article1);
         articleRepo.save(article2);

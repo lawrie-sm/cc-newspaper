@@ -3,7 +3,7 @@ import React from 'react';
 const CategoriesDropdown = ({categories}) => {
   const values = categories.map((value, index) => {
     return(
-      <option value={value}>{value}</option>
+      <option value={value} key={index}>{value}</option>
     )
   })
   return(

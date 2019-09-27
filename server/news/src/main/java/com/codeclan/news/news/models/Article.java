@@ -1,5 +1,6 @@
 package com.codeclan.news.news.models;
 
+import com.codeclan.news.news.properties.ArticleCategory;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
@@ -33,14 +34,18 @@ public class Article {
     @JoinColumn(name = "article_id", nullable=false)
     private Author author;
 
+    @Column(name ="category")
+    private ArticleCategory category;
+
     public Article() {}
 
-    public Article(String title, String summary, String text, Author author, Calendar date) {
+    public Article(String title, String summary, String text, Author author, Calendar date, ArticleCategory category) {
         this.title = title;
         this.summary = summary;
         this.text = text;
         this.author = author;
         this.date = date;
+        this.category = category;
     }
 
     public long getId() {
@@ -89,5 +94,13 @@ public class Article {
 
     public void setDate(Calendar date) {
         this.date = date;
+    }
+
+    public ArticleCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ArticleCategory category) {
+        this.category = category;
     }
 }
