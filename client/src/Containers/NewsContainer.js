@@ -29,8 +29,6 @@ render(){
   return(
     <>
     <h1>NewsContainer</h1>
-    <Header />
-    <CategoriesDropdown categories = {this.state.categories} />
     <ArticleList articles = {this.state.articles}/>
     </>
   )
@@ -39,3 +37,7 @@ render(){
 }
 
 export default NewsContainer;
+
+// <Header />
+// <CategoriesDropdown categories = {this.state.categories} />
+//
