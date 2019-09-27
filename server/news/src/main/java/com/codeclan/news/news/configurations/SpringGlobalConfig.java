@@ -1,3 +1,7 @@
+package com.codeclan.news.news.configurations;
+
+import com.codeclan.news.news.models.Article;
+import com.codeclan.news.news.models.Author;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -14,7 +18,8 @@ public class SpringGlobalConfig implements RepositoryRestConfigurer, WebMvcConfi
 
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-        config.getCorsRegistry()
+            config.exposeIdsFor(Article.class, Author.class); // ADDED
+            config.getCorsRegistry()
                 .addMapping(CORS_BASE_PATTERN)
                 .allowedOrigins(ALLOWED_ORIGINS)
                 .allowedHeaders(ALLOWED_HEADERS)
@@ -28,4 +33,6 @@ public class SpringGlobalConfig implements RepositoryRestConfigurer, WebMvcConfi
                 .allowedHeaders(ALLOWED_HEADERS)
                 .allowedMethods(ALLOWED_METHODS);
     }
+
+
 }

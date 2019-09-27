@@ -17,13 +17,14 @@ constructor(props) {
 }
 
   componentDidMount() {
-    const url = "http://localhost:8080/articles";
+    const url = "http://localhost:8080/articles/by-date";
+
     fetch(url)
     .then(res => res.json())
     .then(articles => this.setState({articles: articles}))
     .catch(err => console.error);
-
  }
+
 render(){
   return(
     <>
