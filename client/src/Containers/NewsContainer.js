@@ -11,8 +11,10 @@ constructor(props) {
   this.state = {
     articles: [],
     journalists: [],
-    categories: [ "World", "UK", "Sport", "Culture", "Education"]
+    categories: [ "World", "UK", "Sport", "Culture", "Education"],
+    category: ""
   };
+  this.setCategory = this.setCategory.bind(this);
 }
 
   componentDidMount() {
@@ -24,14 +26,18 @@ constructor(props) {
     .catch(err => console.error);
  }
 
+ setCategory(category){
+   this.setState({category: category})
+ }
+
 
 render(){
   return(
     <>
     <h1>NewsContainer</h1>
     <Header />
-    <Categories categories = {this.state.categories} />
-    <ArticleList articles = {this.state.articles}/>
+    <Categories categories = {this.state.categories} setCategory = {this.setCategory} />
+    <ArticleList articles = {this.state.articles} filter={this.state.category}/>
     </>
 )}
 
