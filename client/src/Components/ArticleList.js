@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'react-moment';
 
 const ArticleList = (props) => {
   const filter = props.filter;
@@ -10,7 +11,7 @@ const ArticleList = (props) => {
         <li key={index}>
         <h2>{article.title}</h2>
         <h3>{article.author.name}, {article.author.title}</h3>
-        <h3>{article.date}</h3>
+        <h3><Moment fromNow ago>{article.date}</Moment> ago</h3>
         <h3>{article.category}</h3>
         <h3>{article.summary}</h3>
         </li>
@@ -19,7 +20,7 @@ const ArticleList = (props) => {
         <li key={index}>
         <h2>{article.title}</h2>
         <h3>{article.author.name}, {article.author.title}</h3>
-        <h3>{article.date}</h3>
+        <h3><Moment fromNow ago>{article.date}</Moment> ago</h3>
         <h3>{article.category}</h3>
         <h3>{article.summary}</h3>
         </li>
