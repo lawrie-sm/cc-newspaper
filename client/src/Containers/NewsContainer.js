@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Header from '../Components/Header';
-import CategoriesDropdown from '../Components/CategoriesDropdown';
+import Categories from '../Components/Categories';
 import ArticleList from '../Components/ArticleList';
 
 class NewsContainer extends Component {
@@ -30,7 +30,7 @@ render(){
     <>
     <h1>NewsContainer</h1>
     <Header />
-    <CategoriesDropdown categories = {this.state.categories} />
+    <Categories categories = {this.state.categories} />
     <ArticleList articles = {this.state.articles}/>
     </>
 )}
