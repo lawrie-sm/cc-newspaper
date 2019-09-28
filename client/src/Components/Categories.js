@@ -14,6 +14,7 @@ const Categories = (props) => {
   return(
     <>
     <h2>CategoriesButtons</h2>
+      <button value="" onClick={filterCategory}>All</button>
       {values}
     </>
   )
