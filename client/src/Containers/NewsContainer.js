@@ -5,17 +5,19 @@ import ArticleList from '../Components/ArticleList';
 
 class NewsContainer extends Component {
 
-constructor(props) {
-  super(props);
+  constructor(props) {
+    super(props);
 
-  this.state = {
-    articles: [],
-    journalists: [],
-    categories: [ "World", "UK", "Sport", "Culture", "Education"],
-    category: ""
-  };
-  this.setCategory = this.setCategory.bind(this);
-}
+    this.state = {
+      articles: [],
+      journalists: [],
+      categories: [ "World", "UK", "Sport", "Culture", "Education"],
+      category: "",
+      articleId: ""
+    };
+    this.setCategory = this.setCategory.bind(this);
+    this.setArticle = this.setArticle.bind(this);
+  }
 
   componentDidMount() {
     const url = "http://localhost:8080/articles/by-date";
@@ -24,11 +26,16 @@ constructor(props) {
     .then(res => res.json())
     .then(articles => this.setState({articles: articles}))
     .catch(err => console.error);
- }
+  }
 
- setCategory(category){
-   this.setState({category: category})
- }
+  setCategory(category){
+    this.setState({category: category})
+  }
+
+  setArticle(article){
+    this.setState({articleId: article})
+  }
+
 
 
 render(){
@@ -37,9 +44,9 @@ render(){
     <h1>NewsContainer</h1>
     <Header />
     <Categories categories = {this.state.categories} setCategory = {this.setCategory} />
-    <ArticleList articles = {this.state.articles} filter={this.state.category}/>
+    <ArticleList articles = {this.state.articles} filter={this.state.category} setArticle = {this.setArticle}/>
     </>
-)}
+  )}
 
 }
 
