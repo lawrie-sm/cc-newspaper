@@ -99,11 +99,51 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
 
+        Article article5 = new Article("Leicester 5-0 Newcastle: No need for Newcastle to panic yet - Micah Richards analysis",
+                "Things look pretty grim for Newcastle after Sunday's heavy defeat by Leicester but I don't think they need to press the panic button yet.",
+                "Yes, the second half at the King Power Stadium turned into a total nightmare for the Magpies but you have to remember they were down to 10 men and were playing an in-form Foxes side, who went after them relentlessly.\n" +
+                        "\n" +
+                        "I actually thought the Magpies were decent defensively and held a good line until Isaac Hayden was sent off, and it was only after the break when their heads dropped and things got messy.\n" +
+                        "\n" +
+                        "Leicester scored some of their goals far too easily but I don't think that was down to a lack of effort, despite what Newcastle captain Jamaal Lascelles said about that after the game.\n" +
+                        "\n" +
+                        "Newcastle's complete surrender' angers Bruce\n" +
+                        "They were actually trying to get out to the ball but Leicester had too much quality in possession. Before Newcastle knew it, they were kind of burnt out, and that is when the game really got away from them.",
+                reg,
+                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.SPORT);
+
+        Article article6 = new Article("Jess Phillips abuse: Police called to MP's home three times",
+                "MP Jess Phillips said the police were called to her house three times over the weekend amid a \"massive recent increase\" in personal abuse.",
+                "nThe Labour MP told BBC Breakfast she had received hundreds of violent messages since a heated Commons debate on Parliamentary language.\n" +
+                        "\n" +
+                        "She claimed Boris Johnson had a \"direct strategy designed to divide\", which she said was \"working\".\n" +
+                        "\n" +
+                        "The prime minister denies this and said any threats to MPs were \"deplorable\".\n" +
+                        "\n" +
+                        "On Friday, a man was charged in connection with a disturbance at Ms Phillips' Birmingham Yardley constituency office the day before.\n" +
+                        "\n" +
+                        "Ms Phillips has been a high-profile critic of Commons language in recent days.\n" +
+                        "\n" +
+                        "On Thursday, she used the chamber to ask an urgent question on the topic, urging the prime minister to apologise over terms she said risked inflaming \"hatred and division\".\n" +
+                        "\n" +
+                        "How many threats do MPs receive?\n" +
+                        "Do MPs need to mind their language?\n" +
+                        "More news from around the West Midlands\n" +
+                        "\"Since last Wednesday of last week I've had hundreds of violent messages and abusive emails,\" she told the programme earlier. These included abuse on social media as well as direct threats.\n" +
+                        "\n" +
+                        "Ms Phillips said she \"would not claim\" she was always \"well-tempered\" in Parliament.\n" +
+                        "\n" +
+                        "\"I just wish that we could all temper our language and start talking to each other reasonably about a very difficult issue [Brexit],\" she said.\n",
+                reg,
+                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
+
         authorRepo.save(reg);
         articleRepo.save(article1);
         articleRepo.save(article2);
         articleRepo.save(article3);
         articleRepo.save(article4);
+        articleRepo.save(article5);
+        articleRepo.save(article6);
     }
 
 }
