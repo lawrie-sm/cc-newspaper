@@ -5,7 +5,7 @@ const Header = () => (
     <>
       <Link to="/"><h1>Newspaper Name</h1></Link>
       <Link to="/"><h3>Articles</h3></Link>
-      <h3>Admin</h3>
+      <Link to="/admin"><h3>Admin</h3></Link>
     </>
 )
 

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import Header from '../Components/Header';
-import Categories from '../Components/Categories';
-import ArticleList from '../Components/ArticleList';
 import ArticleDetail from '../Components/ArticleDetail';
+import AdminContainer from './AdminContainer';
 import Main from '../Components/Main';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -13,7 +12,7 @@ class NewsContainer extends Component {
 
     this.state = {
       articles: [],
-      journalists: [],
+      authors: [],
       categories: [ "World", "UK", "Sport", "Culture", "Education"],
       category: "",
       articleId: ""
@@ -23,11 +22,14 @@ class NewsContainer extends Component {
   }
 
   componentDidMount() {
-    const url = "http://localhost:8080/articles/by-date";
-
-    fetch(url)
+    fetch("http://localhost:8080/articles/by-date")
     .then(res => res.json())
-    .then(articles => this.setState({articles: articles}))
+    .then(articles => this.setState({articles}))
+    .catch(err => console.error);
+
+    fetch("http://localhost:8080/authors")
+    .then(res => res.json())
+    .then(authors => this.setState({authors: authors._embedded.authors}))
     .catch(err => console.error);
   }
 
@@ -54,6 +56,14 @@ class NewsContainer extends Component {
         articles = {this.state.articles}
         filter={this.state.category}
         setArticle = {this.setArticle}
+        />
+      )}
+      />
+      <Route exact path="/admin"
+      render={(props) => (
+        <AdminContainer
+        articles = {this.state.articles}
+        authors = {this.state.authors}
         />
       )}
       />
