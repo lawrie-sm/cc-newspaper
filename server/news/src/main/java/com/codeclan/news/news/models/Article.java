@@ -13,6 +13,7 @@ public class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
     @Column(name = "title")
@@ -21,7 +22,7 @@ public class Article {
     @Column(name = "summary")
     private String summary;
 
-    @Column(name = "text")
+    @Column(name = "text", columnDefinition = "TEXT")
     private String text;
 
     @JsonFormat(pattern="yyyy-MM-dd")
@@ -31,7 +32,7 @@ public class Article {
 
     @JsonIgnoreProperties("articles")
     @ManyToOne
-    @JoinColumn(name = "article_id", nullable=false)
+    @JoinColumn(name = "author_id", nullable=false)
     private Author author;
 
     @Column(name ="category")
