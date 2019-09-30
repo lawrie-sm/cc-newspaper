@@ -22,7 +22,7 @@ public class Article {
     @Column(name = "summary")
     private String summary;
 
-    @Column(name = "text")
+    @Column(name = "text", columnDefinition = "TEXT")
     private String text;
 
     @JsonFormat(pattern="yyyy-MM-dd")

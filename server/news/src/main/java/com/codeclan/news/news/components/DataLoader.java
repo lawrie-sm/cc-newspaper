@@ -48,11 +48,22 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.JANUARY, 10),ArticleCategory.CULTURE );
 
-        Article article2 = new Article("Small news",
-                "Small news summary",
-                "Small news text",
+        Article article2 = new Article("Claim over Boris Johnson's behaviour 'deeply concerning",
+                "Claims that Boris Johnson squeezed a journalist's thigh under a table during a lunch are \"deeply concerning\", a former Tory cabinet minister has said.",
+                "Writing in the Sunday Times, Charlotte Edwardes said the incident took place in 1999, but Downing Street called the allegation \"untrue\".\n" +
+                        "\n" +
+                        "Justine Greening, now an independent MP, said it raised \"a question about character and integrity\".\n" +
+                        "\n" +
+                        "But Chancellor Sajid Javid said he had \"full faith\" in the PM.\n" +
+                        "\n" +
+                        "Following No 10's denial on Sunday evening, Ms Edwardes tweeted: \"If the prime minister doesn't recollect the incident then clearly I have a better memory than he does.\"\n" +
+                        "\n" +
+                        "No 10 denies Johnson 'thigh squeeze' claim\n" +
+                        "In her first column for the Sunday Times - published on the eve of the Conservative conference in Manchester - Ms Edwardes said she was seated on Mr Johnson's right at the lunch, held at the Spectator magazine's offices.\n" +
+                        "\n" +
+                        "Mr Johnson was editor of the magazine at the time.\n",
                 reg,
-                new GregorianCalendar(2019, Calendar.FEBRUARY, 10 ), ArticleCategory.SPORT);
+                new GregorianCalendar(2019, Calendar.FEBRUARY, 10 ), ArticleCategory.UK);
 
         Article article3 = new Article("Russian GP: Can Ferrari control Charles Leclerc and Sebastian Vettel fall-out?\n",
                 "Ferrari's damage-limitation mode went into overdrive after the Russian Grand Prix, but it remains to be seen whether they will be able to control the fall-out from the latest team orders controversy between their two drivers.",
@@ -68,7 +79,7 @@ public class DataLoader implements ApplicationRunner {
                         "\n" +
                         "In the end, the way the race turned out, Ferrari were able to keep a lid on the situation - publicly at least. But as the dust settled afterwards, from what was not said as much as what was, it was hard to believe that the matter would rest there.",
                 reg,
-                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
+                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.SPORT);
 
         Article article4 = new Article("Saudi crown prince warns of 'Iran threat' to global oil",
                 "Saudi Arabia's crown prince has warned that oil prices could rise steeply if the world does not act to deter Iran.",
@@ -86,7 +97,7 @@ public class DataLoader implements ApplicationRunner {
                         "\n" +
                         "Mr Khashoggi was killed in Saudi Arabia's consulate in Turkey on 2 October 2018.\n",
                 reg,
-                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
+                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
 
         authorRepo.save(reg);
         articleRepo.save(article1);
