@@ -60,10 +60,3 @@ const AdminArticlesForm = ({categories, authors}) => {
 }
 
 export default AdminArticlesForm;
-
-
-// <option value="World">World</option>
-// <option value="UK">UK</option>
-// <option value="Sport">Sport</option>
-// <option value="Culture">Culture</option>
-// <option value="Education">Education</option>
