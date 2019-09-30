@@ -65,6 +65,7 @@ class NewsContainer extends Component {
                 <AdminContainer
                   articles = {this.state.articles}
                   authors = {this.state.authors}
+                  categories= {this.state.categories}
                 />
               )}
             />
