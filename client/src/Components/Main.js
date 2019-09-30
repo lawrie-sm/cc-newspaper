@@ -11,6 +11,3 @@ const Main = ({categories, setCategory, articles, filter, setArticle}) => (
 )
 
 export default Main;
-
-// <Categories categories = {this.state.categories} setCategory = {this.setCategory} />
-// <ArticleList articles = {this.state.articles} filter={this.state.category} setArticle = {this.setArticle}/>
