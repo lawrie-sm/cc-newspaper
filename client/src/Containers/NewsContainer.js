@@ -20,7 +20,11 @@ class NewsContainer extends Component {
     this.admin = this.admin.bind(this);
     this.articleDetail = this.articleDetail.bind(this);
     this.deleteArticle = this.deleteArticle.bind(this);
+    this.createArticle = this.createArticle.bind(this);
   }
+
+  // TODO: Delay rendering until we have everything
+  // To avoid checking authors in admin container
 
   componentDidMount() {
     fetch("http://localhost:8080/articles/by-date")
@@ -36,6 +40,10 @@ class NewsContainer extends Component {
 
   setCategory(category){
     this.setState({selectedCategory: category})
+  }
+
+  findAuthorById(id) {
+    return this.state.authors.find(a => a.id == id);
   }
 
   main(props) {
@@ -56,6 +64,7 @@ class NewsContainer extends Component {
         authors = {this.state.authors}
         categories= {this.state.categories}
         deleteArticle = {this.deleteArticle}
+        createArticle = {this.createArticle}
       />
     )
   }
@@ -65,13 +74,33 @@ class NewsContainer extends Component {
     return <ArticleDetail article={article} />
   }
 
+  createArticle(article) {
+    article.author = `http://localhost:8080/authors/${article.authorId}`
+    article.category = article.category.toUpperCase();
+    fetch('http://localhost:8080/articles', {
+      method: 'POST',
+      body: JSON.stringify(article),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(res => res.json())
+    .then(newArticle => {
+      newArticle.author = this.findAuthorById(article.authorId);
+      const articles = [...this.state.articles, newArticle];
+      console.log("New state:")
+      console.log(articles);
+      this.setState({articles});
+    })
+    .catch(err => console.error);
+  }
+
   deleteArticle(id) {
-    const newArticles = this.state.articles.filter(a => a.id !== id)
-    this.setState({articles: newArticles})
+    const articles = this.state.articles.filter(a => a.id !== id)
+    this.setState({articles})
     fetch(`http://localhost:8080/articles/${id}`, {
       method: 'DELETE'
     })
     .catch(err => console.error);
+
   }
 
   render() {

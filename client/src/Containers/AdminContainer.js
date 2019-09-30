@@ -6,15 +6,19 @@ import AdminJournalistsForm from '../Components/AdminJournalistsForm';
 
 class AdminContainer extends Component {
 
-  render(props){
-    return(
-      <>
-      <AdminArticles articles = {this.props.articles} deleteArticle = {this.props.deleteArticle} />
-      <AdminJournalists authors = {this.props.authors} />
-      <AdminArticlesForm categories = {this.props.categories} authors = {this.props.authors}/>
-      <AdminJournalistsForm />
-      </>
-    )}
+  render(props) {
+    if (this.props.authors.length > 0) {
+      return(
+        <>
+        <AdminArticles articles = {this.props.articles} deleteArticle = {this.props.deleteArticle} />
+        <AdminJournalists authors = {this.props.authors} />
+        <AdminArticlesForm categories = {this.props.categories} authors = {this.props.authors} createArticle = {this.props.createArticle}/>
+        <AdminJournalistsForm />
+        </>
+      )
+    }
+    return null;
+  }
 
   }
 
