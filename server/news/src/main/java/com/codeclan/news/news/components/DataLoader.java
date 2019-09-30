@@ -171,7 +171,36 @@ public class DataLoader implements ApplicationRunner {
                         "\n" +
                         "Against that background, the group lawsuit may seem for the moment like just another irritation.",
                 reg,
-                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
+                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
+
+        Article article8 = new Article("Swiss auction off supercars of Equatorial Guinea leader’s son",
+                "A collection of supercars confiscated from the son of Equatorial Guinea's president have been auctioned off in Switzerland.",
+                " The cars were seized by Swiss authorities as part of an investigation into Teodorin Nguema Obiang.\n" +
+                        "\n" +
+                        "He is vice-president to his father, Teodoro Obiang Nguema, who has ruled Equatorial Guinea for 40 years.\n" +
+                        "\n" +
+                        "Twenty-five of Mr Obiang's cars went under the hammer at a golf club near Geneva on Sunday.\n" +
+                        "\n" +
+                        "The cars, among them Lamborghinis, Ferraris, Bentleys and Rolls Royces, fetched about $27m (£21.9m; 26m Swiss francs) in total.\n" +
+                        "\n" +
+                        "Under a deal will prosecutors, some $23m will go to social projects in Equatorial Guinea, a former Spanish colony where poverty is rife.\n" +
+                        "\n" +
+                        "'$16m seized' from Equatorial Guinea leader's son\n" +
+                        "Find out more about Equatorial Guinea\n" +
+                        "Who is President Teodoro Obiang Nguema?\n" +
+                        "One of the most \"rare and remarkable\" cars, a 2014 Lamborghini Veneno Roadster, was sold for $8.3m to an anonymous buyer.\n" +
+                        "\n" +
+                        "It is a new world record price for a Lamborghini sold at auction, British auctioneers Bonhams said.\n" +
+                        "\n" +
+                        "The hammer price for the 354km/h (220mph) car, introduced to celebrate Lamborghini's 50th anniversary, was about 50% more than its pre-sale estimate.\n" +
+                        "\n" +
+                        "An Aston Martin One-77 Coupe, described as an \"absolute rocket ship\" by the auction house, went for $1.5m.\n" +
+                        "\n" +
+                        "\"Cars like this would be the jewel of any collection, but to have them all together is really quite extraordinary,\" Lynnie Farrant, press officer for auctioneer Bonhams, told the BBC.\n" +
+                        "\n",
+                reg,
+                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
+
 
         authorRepo.save(reg);
         articleRepo.save(article1);
@@ -180,6 +209,8 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article4);
         articleRepo.save(article5);
         articleRepo.save(article6);
+        articleRepo.save(article7);
+        articleRepo.save(article8);
     }
 
 }
