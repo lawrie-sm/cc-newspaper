@@ -23,14 +23,14 @@ class NewsContainer extends Component {
 
   componentDidMount() {
     fetch("http://localhost:8080/articles/by-date")
-    .then(res => res.json())
-    .then(articles => this.setState({articles}))
-    .catch(err => console.error);
+      .then(res => res.json())
+      .then(articles => this.setState({articles}))
+      .catch(err => console.error);
 
     fetch("http://localhost:8080/authors")
-    .then(res => res.json())
-    .then(authors => this.setState({authors: authors._embedded.authors}))
-    .catch(err => console.error);
+      .then(res => res.json())
+      .then(authors => this.setState({authors: authors._embedded.authors}))
+      .catch(err => console.error);
   }
 
   setCategory(category){
@@ -38,6 +38,7 @@ class NewsContainer extends Component {
   }
 
   setArticle(article){
+    console.log(article);
     this.setState({articleId: article})
   }
 
@@ -78,6 +79,6 @@ class NewsContainer extends Component {
 
     )}
 
-  }
+}
 
-  export default NewsContainer;
+export default NewsContainer;
