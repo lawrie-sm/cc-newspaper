@@ -1,13 +1,16 @@
 import React from 'react';
+import AdminArticleListItem from './AdminArticleListItem';
 
-const AdminArticles = ({articles}) => {
+const AdminArticles = ({articles, deleteArticle}) => {
+
+  const handleDelete = (id) => (
+    () => {
+      deleteArticle(id)
+    }
+  )
 
   const articleNodes = articles.map((a, i) => (
-    <>
-    <p key={i}>{a.title}</p>
-    <button>edit</button>
-    <button>delete</button>
-    </>
+    <AdminArticleListItem article={a} key={a.id} handleDelete={handleDelete(a.id)} />
   ));
   return (<>{articleNodes}</>)
 }

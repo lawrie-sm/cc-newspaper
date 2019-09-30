@@ -6,12 +6,12 @@ const AdminJournalistsForm = () => (
   <p>AdminJournalistsForm</p>
   <form action="/" method="post">
   <div>
-  <label for="title">Title:</label>
+  <label htmlFor="title">Title:</label>
   <input type="text" id="title" name="title" />
   </div>
 
   <div>
-  <label for="name">Name:</label>
+  <label htmlFor="name">Name:</label>
   <input type="text" id="name" name="name" />
   </div>
 
