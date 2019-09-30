@@ -139,26 +139,37 @@ public class DataLoader implements ApplicationRunner {
 
         Article article7 = new Article("Volkswagen: Germany's first mass lawsuit begins",
                 "Germany's first mass lawsuit begins as 450,000 owners of diesel Volkswagen cars take on the company.",
-                "nThe Labour MP told BBC Breakfast she had received hundreds of violent messages since a heated Commons debate on Parliamentary language.\n" +
+                "They argue they are owed compensation for being sold cars based on misleading emissions data.\n" +
                         "\n" +
-                        "She claimed Boris Johnson had a \"direct strategy designed to divide\", which she said was \"working\".\n" +
+                        "The scandal has already cost VW €30bn (£26.6bn).\n" +
                         "\n" +
-                        "The prime minister denies this and said any threats to MPs were \"deplorable\".\n" +
+                        "It has faced class action claims in the US and Australia, but this is the first time Germans could pursue group claims since the law was changed last year.\n" +
                         "\n" +
-                        "On Friday, a man was charged in connection with a disturbance at Ms Phillips' Birmingham Yardley constituency office the day before.\n" +
+                        "This trial will settle points of law and the claimants will later be able to file follow-up claims for compensation if they are successful.\n" +
                         "\n" +
-                        "Ms Phillips has been a high-profile critic of Commons language in recent days.\n" +
+                        "The trial, at Braunschweig Higher Regional Court, about 20 miles from VW's Wolfsburg head office, is likely to last years, however.\n" +
                         "\n" +
-                        "On Thursday, she used the chamber to ask an urgent question on the topic, urging the prime minister to apologise over terms she said risked inflaming \"hatred and division\".\n" +
+                        "Part of VW's settlements so far include a deal to buy back 500,000 cars in the US, where it has agreed to pay more than $25bn (£20bn).\n" +
                         "\n" +
-                        "How many threats do MPs receive?\n" +
-                        "Do MPs need to mind their language?\n" +
-                        "More news from around the West Midlands\n" +
-                        "\"Since last Wednesday of last week I've had hundreds of violent messages and abusive emails,\" she told the programme earlier. These included abuse on social media as well as direct threats.\n" +
+                        "In Australia the company will pay 127 million Australian dollars (£70m) to compensate owners, paying them A$1,400 apiece.\n" +
                         "\n" +
-                        "Ms Phillips said she \"would not claim\" she was always \"well-tempered\" in Parliament.\n" +
+                        "Last week it emerged that three current and former Volkswagen executives were charged with market manipulation in connection with the diesel emissions scandal.\n" +
                         "\n" +
-                        "\"I just wish that we could all temper our language and start talking to each other reasonably about a very difficult issue [Brexit],\" she said.\n",
+                        "Chief executive Herbert Diess, chairman Hans Dieter Pötsch and ex-boss Martin Winterkorn, did not inform investors early enough about the financial fallout, German prosecutors allege.\n" +
+                        "\n" +
+                        "In 2015, the firm admitted using illegal software to cheat on emissions tests. VW said it was confident those allegations would prove groundless.\n" +
+                        "\n" +
+                        "This may be a landmark lawsuit - and in terms of the sheer number of claimants, it's certainly attention grabbing. But it may not be the biggest concern for Volkswagen right now.\n" +
+                        "\n" +
+                        "Unless there is a settlement, the legal process is likely to take take years - VW expects it to take at least four. Even if they win, car owners will have to go back to court to get compensation.\n" +
+                        "\n" +
+                        "Meanwhile, VW's chairman and chief executive are both fighting criminal charges for alleged market manipulation linked to the diesel scandal.\n" +
+                        "\n" +
+                        "Volkswagen itself is facing the possibility of hefty fines from the EU, after being accused of colluding with other manufacturers to delay the introduction of emissions control technology.\n" +
+                        "\n" +
+                        "It's safe to say its lawyers are already keeping pretty busy at the moment. And in the meantime, the company is trying to turn itself into a leader in the market for electric cars.\n" +
+                        "\n" +
+                        "Against that background, the group lawsuit may seem for the moment like just another irritation.",
                 reg,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
 
