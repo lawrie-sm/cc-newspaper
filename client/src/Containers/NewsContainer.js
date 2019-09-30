@@ -19,6 +19,7 @@ class NewsContainer extends Component {
     this.main = this.main.bind(this);
     this.admin = this.admin.bind(this);
     this.articleDetail = this.articleDetail.bind(this);
+    this.deleteArticle = this.deleteArticle.bind(this);
   }
 
   componentDidMount() {
@@ -54,6 +55,7 @@ class NewsContainer extends Component {
         articles = {this.state.articles}
         authors = {this.state.authors}
         categories= {this.state.categories}
+        deleteArticle = {this.deleteArticle}
       />
     )
   }
@@ -61,6 +63,15 @@ class NewsContainer extends Component {
   articleDetail(props) {
     const article = this.state.articles.find(a => a.id == props.match.params.id);
     return <ArticleDetail article={article} />
+  }
+
+  deleteArticle(id) {
+    const newArticles = this.state.articles.filter(a => a.id !== id)
+    this.setState({articles: newArticles})
+    fetch(`http://localhost:8080/articles/${id}`, {
+      method: 'DELETE'
+    })
+    .catch(err => console.error);
   }
 
   render() {
