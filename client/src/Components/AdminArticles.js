@@ -2,14 +2,10 @@ import React from 'react';
 
 const AdminArticles = ({articles}) => {
 
-  const articleNodes = articles.map((article, index) => (
-    <p key={index}>{article.title}</p>
-  )
-)
-console.log(articleNodes);
-return (
-  {articleNodes}
-)
+  const articleNodes = articles.map((a, i) => (
+    <p key={i}>{a.title}</p>
+  ));
+  return (<>{articleNodes}</>)
 }
 
 export default AdminArticles;
