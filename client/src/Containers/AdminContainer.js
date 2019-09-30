@@ -11,9 +11,9 @@ class AdminContainer extends Component {
       return(
         <>
         <AdminArticles articles = {this.props.articles} deleteArticle = {this.props.deleteArticle} />
-        <AdminJournalists authors = {this.props.authors} />
-        <AdminArticlesForm categories = {this.props.categories} authors = {this.props.authors} createArticle = {this.props.createArticle}/>
-        <AdminJournalistsForm />
+        <AdminJournalists authors = {this.props.authors} deleteAuthor = {this.props.deleteAuthor} />
+        <AdminArticlesForm categories = {this.props.categories} authors = {this.props.authors} createArticle = {this.props.createArticle} />
+        <AdminJournalistsForm createAuthor = {this.props.createAuthor} />
         </>
       )
     }

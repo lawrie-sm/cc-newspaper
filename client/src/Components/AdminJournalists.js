@@ -1,16 +1,19 @@
 import React from 'react';
+import AdminJournalistListItem from './AdminJournalistListItem';
 
-const AdminJournalists = ({authors}) => {
+
+const AdminJournalists = ({authors, deleteAuthor}) => {
+
+  const handleDelete = (id) => (
+    () => {
+      deleteAuthor(id)
+    }
+  )
 
   const authorNodes = authors.map((a, i) => (
-    <>
-    <p key={i}>{a.name}, {a.title}</p>
-    <button>edit</button>
-    <button>delete</button>
-    </>
+    <AdminJournalistListItem author={a} key={a.id} handleDelete={handleDelete(a.id)} />
   ));
   return (<>{authorNodes}</>)
 }
-
 
 export default AdminJournalists;

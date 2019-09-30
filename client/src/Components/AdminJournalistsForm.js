@@ -1,26 +1,45 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const AdminJournalistsForm = () => (
+class AdminJournalistsForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  <>
-  <p>AdminJournalistsForm</p>
-  <form action="/" method="post">
-  <div>
-  <label htmlFor="title">Title:</label>
-  <input type="text" id="title" name="title" />
-  </div>
+  handleChange({ target: { value, name } }) {
+    this.setState({[name]: value});
+  }
 
-  <div>
-  <label htmlFor="name">Name:</label>
-  <input type="text" id="name" name="name" />
-  </div>
+  handleSubmit(evt){
+    evt.preventDefault();
+    this.props.createAuthor(this.state)
+  }
+  render(){
+    return(
+
+      <>
+      <p>AdminJournalistsForm</p>
+      <form onSubmit={this.handleSubmit}>
+      <div>
+      <label htmlFor="title">Title:</label>
+      <input type="text" id="title" name="title" onChange={this.handleChange} required />
+      </div>
+
+      <div>
+      <label htmlFor="name">Name:</label>
+      <input type="text" id="name" name="name" onChange={this.handleChange} required />
+      </div>
 
 
-  <input type="submit" value="Submit" />
+      <input type="submit" value="Submit" />
 
-  </form>
+      </form>
 
-  </>
-)
+      </>
+    )}
+  }
 
-export default AdminJournalistsForm;
+  export default AdminJournalistsForm;
