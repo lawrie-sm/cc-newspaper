@@ -12,6 +12,7 @@ class AdminContainer extends Component {
   render(props){
     return(
       <>
+      <AdminArticles articles = {this.props.articles} />
       <AdminJournalists journalists = {this.props.journalists} />
       <AdminArticlesForm categories = {this.props.categories} authors = {this.props.authors}/>
       <AdminJournalistsForm />

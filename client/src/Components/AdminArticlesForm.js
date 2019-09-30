@@ -11,6 +11,7 @@ const AdminArticlesForm = ({categories, authors}) => {
   ))
   return(
     <>
+    <p>AdminArticlesForm</p>
     <form action="/" method="post">
     <div>
     <label for="title">Title:</label>
@@ -54,7 +55,6 @@ const AdminArticlesForm = ({categories, authors}) => {
 
     </form>
 
-    <p>AdminArticlesForm</p>
     </>
   )
 }
