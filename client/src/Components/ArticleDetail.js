@@ -1,10 +1,13 @@
 import React from 'react';
 
-const ArticleDetail = ({value}) => (
+const ArticleDetail = ({article}) => (
   <>
-  <h3>{value.title}</h3>
-  <p>{value.author}</p>
-  <p>{value.text}</p>
+  <h1>test</h1>
+  <h1>{article.category}</h1>
+  <h2>{article.date}</h2>
+  <h3>{article.text}</h3>
+  <h1>test</h1>
+
 </>
 )
 

@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import Header from '../Components/Header';
 import Categories from '../Components/Categories';
 import ArticleList from '../Components/ArticleList';
+import ArticleDetail from '../Components/ArticleDetail';
+import Main from '../Components/Main';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 class NewsContainer extends Component {
 
@@ -36,18 +39,34 @@ class NewsContainer extends Component {
     this.setState({articleId: article})
   }
 
+  render(){
+    return(
+      <Router>
+      <React.Fragment>
+      <h1>NewsContainer</h1>
+      <Header />
+      <Switch>
+      <Route exact path="/"
+      render={(props) => (
+      <Main
+      categories = {this.state.categories}
+      setCategory = {this.setCategory}
+      articles = {this.state.articles}
+      filter={this.state.category}
+      setArticle = {this.setArticle}
+      />
+    )}
+      />
+      <Route
+      path="/article/:index"
+      render={(props) => <ArticleDetail article = {this.state.articles[this.state.articleId]} />}
+      />
+      </Switch>
+      </React.Fragment>
+      </Router>
 
+    )}
 
-render(){
-  return(
-    <>
-    <h1>NewsContainer</h1>
-    <Header />
-    <Categories categories = {this.state.categories} setCategory = {this.setCategory} />
-    <ArticleList articles = {this.state.articles} filter={this.state.category} setArticle = {this.setArticle}/>
-    </>
-  )}
+  }
 
-}
-
-export default NewsContainer;
+  export default NewsContainer;
