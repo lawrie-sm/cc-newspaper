@@ -1,21 +1,19 @@
 import React from 'react';
 
 const Categories = (props) => {
-  const values = props.categories.map((value, index) => {
-    return(
-      <button value={value} key={index} onClick={filterCategory}>{value}</button>
-    )
-  })
+  const buttonNodes = props.categories.map((value, i) => (
+      <button value={value} key={i} onClick={handleClick}>{value}</button>
+  ));
 
-  function filterCategory(event){
-    props.setCategory(event.target.value);
+  function handleClick(evt){
+    props.setCategory(evt.target.value);
   }
 
   return(
     <>
-    <h2>CategoriesButtons</h2>
-      <button value="" onClick={filterCategory}>All</button>
-      {values}
+    <h2>Categories</h2>
+      <button value="" onClick={handleClick}>All</button>
+      {buttonNodes}
     </>
   )
 }
