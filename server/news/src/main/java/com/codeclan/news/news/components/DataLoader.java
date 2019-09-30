@@ -137,6 +137,31 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
 
+        Article article7 = new Article("Volkswagen: Germany's first mass lawsuit begins",
+                "Germany's first mass lawsuit begins as 450,000 owners of diesel Volkswagen cars take on the company.",
+                "nThe Labour MP told BBC Breakfast she had received hundreds of violent messages since a heated Commons debate on Parliamentary language.\n" +
+                        "\n" +
+                        "She claimed Boris Johnson had a \"direct strategy designed to divide\", which she said was \"working\".\n" +
+                        "\n" +
+                        "The prime minister denies this and said any threats to MPs were \"deplorable\".\n" +
+                        "\n" +
+                        "On Friday, a man was charged in connection with a disturbance at Ms Phillips' Birmingham Yardley constituency office the day before.\n" +
+                        "\n" +
+                        "Ms Phillips has been a high-profile critic of Commons language in recent days.\n" +
+                        "\n" +
+                        "On Thursday, she used the chamber to ask an urgent question on the topic, urging the prime minister to apologise over terms she said risked inflaming \"hatred and division\".\n" +
+                        "\n" +
+                        "How many threats do MPs receive?\n" +
+                        "Do MPs need to mind their language?\n" +
+                        "More news from around the West Midlands\n" +
+                        "\"Since last Wednesday of last week I've had hundreds of violent messages and abusive emails,\" she told the programme earlier. These included abuse on social media as well as direct threats.\n" +
+                        "\n" +
+                        "Ms Phillips said she \"would not claim\" she was always \"well-tempered\" in Parliament.\n" +
+                        "\n" +
+                        "\"I just wish that we could all temper our language and start talking to each other reasonably about a very difficult issue [Brexit],\" she said.\n",
+                reg,
+                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
+
         authorRepo.save(reg);
         articleRepo.save(article1);
         articleRepo.save(article2);
