@@ -14,11 +14,10 @@ class NewsContainer extends Component {
       articles: [],
       authors: [],
       categories: [ "World", "UK", "Sport", "Culture", "Education"],
-      category: "",
-      articleId: ""
+      selectedCategory: "",
+      selectedArticle: null
     };
     this.setCategory = this.setCategory.bind(this);
-    this.setArticle = this.setArticle.bind(this);
   }
 
   componentDidMount() {
@@ -34,12 +33,12 @@ class NewsContainer extends Component {
   }
 
   setCategory(category){
-    this.setState({category: category})
+    this.setState({selectedCategory: category})
   }
 
-  setArticle(article){
-    console.log(article);
-    this.setState({articleId: article})
+  getArticleDetailByID(id) {
+    const article = this.state.articles.find(a => a.id == id);
+    return <ArticleDetail article={article} />
   }
 
   render(){
@@ -55,29 +54,29 @@ class NewsContainer extends Component {
                   categories = {this.state.categories}
                   setCategory = {this.setCategory}
                   articles = {this.state.articles}
-                  filter={this.state.category}
+                  filter={this.state.selectedCategory}
                   setArticle = {this.setArticle}
                 />
               )}
+            />
+            <Route
+              exact path="/admin"
+              render={(props) => (
+                <AdminContainer
+                  articles = {this.state.articles}
+                  authors = {this.state.authors}
                 />
-                  <Route exact path="/admin"
-                    render={(props) => (
-                      <AdminContainer
-                        articles = {this.state.articles}
-                        authors = {this.state.authors}
-                      />
-                    )}
-                      />
-                        <Route
-                          path="/article/:index"
-                          render={(props) => <ArticleDetail article = {this.state.articles[this.state.articleId]} />}
-                          />
-                          </Switch>
-                        </React.Fragment>
-                      </Router>
+              )}
+            />
+            <Route
+              path="/article/:id"
+              render={(props) => this.getArticleDetailByID(props.match.params.id)}
+            />
+          </Switch>
+        </React.Fragment>
+      </Router>
 
     )}
-
 }
 
 export default NewsContainer;

@@ -3,8 +3,8 @@ import ArticleListItem from './ArticleListItem';
 
 const ArticleList = ({filter, articles, setArticle}) => {
 
-  function handleClick(event){
-    setArticle(event.target.id);
+  function handleClick(evt){
+    setArticle(evt.target.id);
   }
 
   const articleNodes = articles.map((article, index) => {
@@ -13,7 +13,6 @@ const ArticleList = ({filter, articles, setArticle}) => {
       return (
         <ArticleListItem
           key={index}
-          index={index}
           article={article}
           handleClick={handleClick}
         />

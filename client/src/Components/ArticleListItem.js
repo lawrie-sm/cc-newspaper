@@ -2,12 +2,10 @@ import React from 'react';
 import Moment from 'react-moment';
 import {Link} from 'react-router-dom';
 
-const ArticleListItem = ({index, article, handleClick}) => (
+const ArticleListItem = ({article}) => (
   <li>
-    <Link to={`/article/${index}`}>
-      <h2 id={index} onClick={handleClick}>
-          {article.title}
-      </h2>
+    <Link to={`/article/${article.id}`}>
+      <h2> {article.title} </h2>
     </Link>
     <h3>{article.author.name}, {article.author.title}</h3>
     <h3><Moment fromNow ago>{article.date}</Moment> ago</h3>
