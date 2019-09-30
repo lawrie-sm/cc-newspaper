@@ -48,14 +48,14 @@ class NewsContainer extends Component {
       <Switch>
       <Route exact path="/"
       render={(props) => (
-      <Main
-      categories = {this.state.categories}
-      setCategory = {this.setCategory}
-      articles = {this.state.articles}
-      filter={this.state.category}
-      setArticle = {this.setArticle}
-      />
-    )}
+        <Main
+        categories = {this.state.categories}
+        setCategory = {this.setCategory}
+        articles = {this.state.articles}
+        filter={this.state.category}
+        setArticle = {this.setArticle}
+        />
+      )}
       />
       <Route
       path="/article/:index"
