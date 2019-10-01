@@ -1,20 +1,23 @@
-.categoryButton {
+.categoryButton, .selectedCategoryButton {
 	-moz-border-radius:33px;
 	-webkit-border-radius:33px;
 	border-radius:33px;
   border: none;
 	display:inline-block;
 	cursor:pointer;
-	padding:4px 58px;
+	padding:4px 38px;
 	text-decoration:none;
   font-family: freight-sans-pro, sans-serif;
   font-weight: 600;
   font-size: 14px;
-  margin-left: 5px;
+  margin-left: 10px;
   background-color:#bfe6d6;
 }
 .categoryButton:hover {
-	background-color:#9ad8bf;
+	background-color:#63c39c;
+}
+.selectedCategoryButton {
+  background-color:#63c39c;
 }
 .categories-container{
   padding: 25px 0px;

@@ -57,6 +57,7 @@ class NewsContainer extends Component {
       setCategory = {this.setCategory}
       articles = {this.state.articles}
       filter={this.state.selectedCategory}
+      selectedCategory={this.state.selectedCategory}
       />
     )
   }

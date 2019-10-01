@@ -2,9 +2,9 @@ import React from 'react';
 import Categories from './Categories';
 import ArticleList from './ArticleList';
 
-const Main = ({categories, setCategory, articles, filter, setArticle}) => (
+const Main = ({categories, setCategory, articles, filter, setArticle, selectedCategory}) => (
   <>
-    <Categories categories={categories} setCategory={setCategory} />
+    <Categories categories={categories} setCategory={setCategory} selectedCategory={selectedCategory} />
     <ArticleList articles={articles} filter={filter} setArticle={setArticle} />
   </>
 )
