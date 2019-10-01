@@ -22,9 +22,7 @@ class AdminArticlesForm extends Component {
   }
 
   render(){
-
-    const {title, summary, text, date, category, authorId} = this.props.selectedArticle || null
-
+    console.log("render");
     const categoryNodes = this.props.categories.map((c, index) => (
       <option value={c} key={index}>{c}</option>
     ))
@@ -38,27 +36,27 @@ class AdminArticlesForm extends Component {
       <p>AdminArticlesForm</p>
       <form onSubmit={this.handleSubmit}>
       <div>
-      <label htmlFor="title" value={title}>Title:</label>
-      <input type="text" id="title" name="title" onChange={this.handleChange} required />
+      <label htmlFor="title">Title:</label>
+      <input type="text" id="title" name="title" onChange={this.handleChange} value={this.props.selectedArticle.title} required />
       </div>
 
       <div>
-      <label htmlFor="summary" value={summary}>Summary:</label>
+      <label htmlFor="summary" value={this.props.selectedArticle.summary}>Summary:</label>
       <input type="text" id="summary" name="summary" onChange={this.handleChange} required />
       </div>
 
       <div>
-      <label htmlFor="text" value={text}>Text:</label>
+      <label htmlFor="text" value={this.props.selectedArticle.text}>Text:</label>
       <input type="text" id="text" name="text" onChange={this.handleChange} required />
       </div>
 
       <div>
-      <label htmlFor="date" value={date}>Date:</label>
+      <label htmlFor="date" value={this.props.selectedArticle.date}>Date:</label>
       <input type="date" id="date" name="date" onChange={this.handleChange} required/>
       </div>
 
       <div>
-      <label htmlFor="category" value={category}>Category:</label>
+      <label htmlFor="category" value={this.props.selectedArticle.category}>Category:</label>
       <select name="category" onChange={this.handleChange} required >
       <>
       {categoryNodes}
@@ -67,7 +65,7 @@ class AdminArticlesForm extends Component {
       </div>
 
       <div>
-      <label htmlFor="authorId" value={authorId}>Author:</label>
+      <label htmlFor="authorId" value={this.props.selectedArticle.authorId}>Author:</label>
       <select name="authorId" onChange={this.handleChange} required >
       <>
       {authorNodes}
