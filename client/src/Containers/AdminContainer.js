@@ -10,9 +10,13 @@ class AdminContainer extends Component {
     if (this.props.authors.length > 0) {
       return(
         <>
-        <AdminArticles articles = {this.props.articles} deleteArticle = {this.props.deleteArticle} />
+        <AdminArticles articles = {this.props.articles} deleteArticle = {this.props.deleteArticle} editArticle = {this.props.editArticle} />
         <AdminJournalists authors = {this.props.authors} deleteAuthor = {this.props.deleteAuthor} />
-        <AdminArticlesForm categories = {this.props.categories} authors = {this.props.authors} createArticle = {this.props.createArticle} />
+        <AdminArticlesForm
+        categories = {this.props.categories} 
+        selectedArticle = {this.props.selectedArticle}
+        authors = {this.props.authors}
+        createArticle = {this.props.createArticle} />
         <AdminJournalistsForm createAuthor = {this.props.createAuthor} />
         </>
       )

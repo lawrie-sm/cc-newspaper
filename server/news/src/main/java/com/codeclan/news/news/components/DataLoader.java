@@ -137,6 +137,7 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
 
+
         Article article7 = new Article("Brexit: What happens now?",
                 "The Supreme Court has ruled that the suspension of Parliament on 9 September was unlawful and void. MPs returned to Westminster on Wednesday.\n" +
                         "Where does this leave the wider Brexit process and how could it play out over the coming weeks?",
@@ -161,15 +162,6 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.SPORT);
 
-        Article article8 = new Article("Cristiano Ronaldo and Lionel Messi: Is their era of dominance heading towards its end?",
-                "Seven weeks into the season, Cristiano Ronaldo and Lionel Messi have scored only three club goals between them.",
-                "Seven weeks into the season, Cristiano Ronaldo and Lionel Messi have scored only three club goals between them.\n" +
-                        "\n" +
-                        "The pair have dominated football for the past decade, with a combined 1,369 goals, 10 Ballons d'Or and nine Champions League titles.\n" +
-                        "\n" +
-                        "But with Barcelona and Argentina's Messi, 32, suffering from multiple injuries already this season and Juventus and Portugal forward Ronaldo, 34, no longer winning golden boots, are we witnessing the beginning of the end of the pair's era of dominance?",
-                reg,
-                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.SPORT);
 
         Article article9 = new Article("Rugby World Cup: England's Manu Tuilagi grateful to be in Japan",
                 "Of the little green shoots and bright sparks around England's predictably comfortable progress through their opening two World Cup group games, Manu Tuilagi's second try against Tonga perhaps hinted at more than any other.",
@@ -257,6 +249,71 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.APRIL, 23), ArticleCategory.CULTURE);
 
+        Article article16 = new Article("Volkswagen: Germany's first mass lawsuit begins",
+                "Germany's first mass lawsuit begins as 450,000 owners of diesel Volkswagen cars take on the company.",
+                "They argue they are owed compensation for being sold cars based on misleading emissions data.\n" +
+                        "\n" +
+                        "The scandal has already cost VW €30bn (£26.6bn).\n" +
+                        "\n" +
+                        "It has faced class action claims in the US and Australia, but this is the first time Germans could pursue group claims since the law was changed last year.\n" +
+                        "\n" +
+                        "This trial will settle points of law and the claimants will later be able to file follow-up claims for compensation if they are successful.\n" +
+                        "\n" +
+                        "The trial, at Braunschweig Higher Regional Court, about 20 miles from VW's Wolfsburg head office, is likely to last years, however.\n" +
+                        "\n" +
+                        "Part of VW's settlements so far include a deal to buy back 500,000 cars in the US, where it has agreed to pay more than $25bn (£20bn).\n" +
+                        "\n" +
+                        "In Australia the company will pay 127 million Australian dollars (£70m) to compensate owners, paying them A$1,400 apiece.\n" +
+                        "\n" +
+                        "Last week it emerged that three current and former Volkswagen executives were charged with market manipulation in connection with the diesel emissions scandal.\n" +
+                        "\n" +
+                        "Chief executive Herbert Diess, chairman Hans Dieter Pötsch and ex-boss Martin Winterkorn, did not inform investors early enough about the financial fallout, German prosecutors allege.\n" +
+                        "\n" +
+                        "In 2015, the firm admitted using illegal software to cheat on emissions tests. VW said it was confident those allegations would prove groundless.\n" +
+                        "\n" +
+                        "This may be a landmark lawsuit - and in terms of the sheer number of claimants, it's certainly attention grabbing. But it may not be the biggest concern for Volkswagen right now.\n" +
+                        "\n" +
+                        "Unless there is a settlement, the legal process is likely to take take years - VW expects it to take at least four. Even if they win, car owners will have to go back to court to get compensation.\n" +
+                        "\n" +
+                        "Meanwhile, VW's chairman and chief executive are both fighting criminal charges for alleged market manipulation linked to the diesel scandal.\n" +
+                        "\n" +
+                        "Volkswagen itself is facing the possibility of hefty fines from the EU, after being accused of colluding with other manufacturers to delay the introduction of emissions control technology.\n" +
+                        "\n" +
+                        "It's safe to say its lawyers are already keeping pretty busy at the moment. And in the meantime, the company is trying to turn itself into a leader in the market for electric cars.\n" +
+                        "\n" +
+                        "Against that background, the group lawsuit may seem for the moment like just another irritation.",
+                reg,
+                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
+
+        Article article17 = new Article("Swiss auction off supercars of Equatorial Guinea leader’s son",
+                "A collection of supercars confiscated from the son of Equatorial Guinea's president have been auctioned off in Switzerland.",
+                " The cars were seized by Swiss authorities as part of an investigation into Teodorin Nguema Obiang.\n" +
+                        "\n" +
+                        "He is vice-president to his father, Teodoro Obiang Nguema, who has ruled Equatorial Guinea for 40 years.\n" +
+                        "\n" +
+                        "Twenty-five of Mr Obiang's cars went under the hammer at a golf club near Geneva on Sunday.\n" +
+                        "\n" +
+                        "The cars, among them Lamborghinis, Ferraris, Bentleys and Rolls Royces, fetched about $27m (£21.9m; 26m Swiss francs) in total.\n" +
+                        "\n" +
+                        "Under a deal will prosecutors, some $23m will go to social projects in Equatorial Guinea, a former Spanish colony where poverty is rife.\n" +
+                        "\n" +
+                        "'$16m seized' from Equatorial Guinea leader's son\n" +
+                        "Find out more about Equatorial Guinea\n" +
+                        "Who is President Teodoro Obiang Nguema?\n" +
+                        "One of the most \"rare and remarkable\" cars, a 2014 Lamborghini Veneno Roadster, was sold for $8.3m to an anonymous buyer.\n" +
+                        "\n" +
+                        "It is a new world record price for a Lamborghini sold at auction, British auctioneers Bonhams said.\n" +
+                        "\n" +
+                        "The hammer price for the 354km/h (220mph) car, introduced to celebrate Lamborghini's 50th anniversary, was about 50% more than its pre-sale estimate.\n" +
+                        "\n" +
+                        "An Aston Martin One-77 Coupe, described as an \"absolute rocket ship\" by the auction house, went for $1.5m.\n" +
+                        "\n" +
+                        "\"Cars like this would be the jewel of any collection, but to have them all together is really quite extraordinary,\" Lynnie Farrant, press officer for auctioneer Bonhams, told the BBC.\n" +
+                        "\n",
+                reg,
+                new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
+
+
 
         authorRepo.save(reg);
         articleRepo.save(article1);
@@ -267,6 +324,7 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article6);
         articleRepo.save(article7);
         articleRepo.save(article8);
+
         articleRepo.save(article9);
         articleRepo.save(article10);
         articleRepo.save(article11);
@@ -274,6 +332,9 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article13);
         articleRepo.save(article14);
         articleRepo.save(article15);
+        articleRepo.save(article16);
+        articleRepo.save(article17);
+
     }
 
 }

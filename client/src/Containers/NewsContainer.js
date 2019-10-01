@@ -14,12 +14,14 @@ class NewsContainer extends Component {
       authors: [],
       categories: [ "World", "UK", "Sport", "Culture", "Education"],
       selectedCategory: "",
+      selectedArticle: {}
     };
     this.setCategory = this.setCategory.bind(this);
     this.main = this.main.bind(this);
     this.admin = this.admin.bind(this);
     this.articleDetail = this.articleDetail.bind(this);
     this.deleteArticle = this.deleteArticle.bind(this);
+    this.editArticle = this.editArticle.bind(this);
     this.createArticle = this.createArticle.bind(this);
     this.deleteAuthor = this.deleteAuthor.bind(this);
     this.createAuthor = this.createAuthor.bind(this);
@@ -67,8 +69,10 @@ class NewsContainer extends Component {
       categories= {this.state.categories}
       deleteArticle = {this.deleteArticle}
       createArticle = {this.createArticle}
+      editArticle = {this.editArticle}
       deleteAuthor = {this.deleteAuthor}
       createAuthor = {this.createAuthor}
+      selectedArticle = {this.state.selectedArticle}
       />
     )
   }
@@ -109,6 +113,10 @@ class NewsContainer extends Component {
     this.setState({authors});
   })
   .catch(err => console.error);
+}
+
+editArticle(article){
+  this.setState({selectedArticle: article});
 }
 
 deleteArticle(id) {

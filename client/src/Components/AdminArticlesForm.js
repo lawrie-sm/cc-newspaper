@@ -6,7 +6,11 @@ class AdminArticlesForm extends Component {
     super(props);
     this.state = {
       category: this.props.categories[0],
-      authorId: this.props.authors[0].id
+      authorId: this.props.authors[0].id,
+      title: "",
+      text: "",
+      summary: "",
+      date: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,41 +20,52 @@ class AdminArticlesForm extends Component {
     this.setState({[name]: value});
   }
 
+  componentDidUpdate(prevProps){
+    if (
+        this.props.selectedArticle &&
+        this.props.selectedArticle !==prevProps.selectedArticle){
+        this.setState(this.props.selectedArticle)
+        console.log("mount");
+    }
+  }
+
   handleSubmit(evt){
     evt.preventDefault();
     this.props.createArticle(this.state)
   }
 
   render(){
-    const categoryNodes = this.props.categories.map((category, index) => (
-      <option value={category} key={index}>{category}</option>
+
+    const categoryNodes = this.props.categories.map((c, index) => (
+      <option value={c} key={index}>{c}</option>
     ))
 
-    const authorNodes = this.props.authors.map((author, index) => (
-      <option value={author.id} key={index}>{author.name}, {author.title}</option>
+    const authorNodes = this.props.authors.map((a, index) => (
+      <option value={a.id} key={index}>{a.name}, {a.title}</option>
     ))
+
     return(
       <>
       <p>AdminArticlesForm</p>
       <form onSubmit={this.handleSubmit}>
       <div>
       <label htmlFor="title">Title:</label>
-      <input type="text" id="title" name="title" onChange={this.handleChange} required />
+      <input type="text" id="title" name="title" value={this.state.title} onChange={this.handleChange} required />
       </div>
 
       <div>
       <label htmlFor="summary">Summary:</label>
-      <input type="text" id="summary" name="summary" onChange={this.handleChange} required />
+      <input type="text" id="summary" name="summary" value={this.state.summary} onChange={this.handleChange} required />
       </div>
 
       <div>
       <label htmlFor="text">Text:</label>
-      <input type="text" id="text" name="text" onChange={this.handleChange} required />
+      <input type="text" id="text" name="text" value={this.state.text} onChange={this.handleChange} required />
       </div>
 
       <div>
       <label htmlFor="date">Date:</label>
-      <input type="date" id="date" name="date" onChange={this.handleChange} required/>
+      <input type="date" id="date" name="date" value={this.state.date} onChange={this.handleChange} required/>
       </div>
 
       <div>
@@ -77,6 +92,7 @@ class AdminArticlesForm extends Component {
 
       </>
     )
+
   }
 }
 
