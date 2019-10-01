@@ -5,8 +5,8 @@ class AdminArticlesForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: this.props.categories[0],
-      authorId: this.props.authors[0].id,
+      category: "",
+      authorId: 0,
       title: "",
       text: "",
       summary: "",
@@ -14,6 +14,7 @@ class AdminArticlesForm extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEditSubmit = this.handleEditSubmit.bind(this);
   }
 
   handleChange({ target: { value, name } }) {
@@ -21,17 +22,20 @@ class AdminArticlesForm extends Component {
   }
 
   componentDidUpdate(prevProps){
-    if (
-        this.props.selectedArticle &&
+    if (this.props.selectedArticle &&
         this.props.selectedArticle !==prevProps.selectedArticle){
-        this.setState(this.props.selectedArticle)
-        console.log("mount");
+        this.setState({...this.props.selectedArticle, authorId: this.props.selectedArticle.author.id})
     }
   }
 
   handleSubmit(evt){
     evt.preventDefault();
-    this.props.createArticle(this.state)
+    this.props.createArticle({...this.state})
+  }
+
+  handleEditSubmit(evt){
+    evt.preventDefault();
+    this.props.submitEditArticle({...this.state})
   }
 
   render(){
@@ -47,47 +51,43 @@ class AdminArticlesForm extends Component {
     return(
       <>
       <p>AdminArticlesForm</p>
-      <form onSubmit={this.handleSubmit}>
-      <div>
-      <label htmlFor="title">Title:</label>
-      <input type="text" id="title" name="title" value={this.state.title} onChange={this.handleChange} required />
-      </div>
+      <form>
+        <div>
+          <label htmlFor="title">Title:</label>
+          <input type="text" id="title" name="title" value={this.state.title} onChange={this.handleChange} required />
+        </div>
 
-      <div>
-      <label htmlFor="summary">Summary:</label>
-      <input type="text" id="summary" name="summary" value={this.state.summary} onChange={this.handleChange} required />
-      </div>
+        <div>
+          <label htmlFor="summary">Summary:</label>
+          <input type="text" id="summary" name="summary" value={this.state.summary} onChange={this.handleChange} required />
+        </div>
 
-      <div>
-      <label htmlFor="text">Text:</label>
-      <input type="text" id="text" name="text" value={this.state.text} onChange={this.handleChange} required />
-      </div>
+        <div>
+          <label htmlFor="text">Text:</label>
+          <input type="text" id="text" name="text" value={this.state.text} onChange={this.handleChange} required />
+        </div>
 
-      <div>
-      <label htmlFor="date">Date:</label>
-      <input type="date" id="date" name="date" value={this.state.date} onChange={this.handleChange} required/>
-      </div>
+        <div>
+          <label htmlFor="date">Date:</label>
+          <input type="date" id="date" name="date" value={this.state.date} onChange={this.handleChange} required/>
+        </div>
 
-      <div>
-      <label htmlFor="category">Category:</label>
-      <select name="category" onChange={this.handleChange} required >
-      <>
-      {categoryNodes}
-      </>
-      </select>
-      </div>
+        <div>
+          <label htmlFor="category">Category:</label>
+          <select name="category" value={this.state.category} onChange={this.handleChange} required >
+              {categoryNodes}
+          </select>
+        </div>
 
-      <div>
-      <label htmlFor="authorId">Author:</label>
-      <select name="authorId" onChange={this.handleChange} required >
-      <>
-      {authorNodes}
-      </>
-      </select>
-      </div>
+        <div>
+          <label htmlFor="authorId">Author:</label>
+          <select name="authorId" value={this.state.authorId} onChange={this.handleChange} required >
+              {authorNodes}
+          </select>
+        </div>
 
-      <input type="submit" value="Submit" />
-
+        <input onClick={this.handleSubmit} type="submit" value="Submit" />
+        <input onClick={this.handleEditSubmit} type="submit" value="Update" />
       </form>
 
       </>

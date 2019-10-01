@@ -12,7 +12,7 @@ class NewsContainer extends Component {
     this.state = {
       articles: [],
       authors: [],
-      categories: [ "World", "UK", "Sport", "Culture", "Education"],
+      categories: [ "WORLD", "UK", "SPORT", "CULTURE", "EDUCATION"],
       selectedCategory: "",
       selectedArticle: {}
     };
@@ -22,6 +22,7 @@ class NewsContainer extends Component {
     this.articleDetail = this.articleDetail.bind(this);
     this.deleteArticle = this.deleteArticle.bind(this);
     this.editArticle = this.editArticle.bind(this);
+    this.submitEditArticle = this.submitEditArticle.bind(this);
     this.createArticle = this.createArticle.bind(this);
     this.deleteAuthor = this.deleteAuthor.bind(this);
     this.createAuthor = this.createAuthor.bind(this);
@@ -67,12 +68,13 @@ class NewsContainer extends Component {
       articles = {this.state.articles}
       authors = {this.state.authors}
       categories= {this.state.categories}
+      selectedArticle = {this.state.selectedArticle}
       deleteArticle = {this.deleteArticle}
       createArticle = {this.createArticle}
       editArticle = {this.editArticle}
       deleteAuthor = {this.deleteAuthor}
       createAuthor = {this.createAuthor}
-      selectedArticle = {this.state.selectedArticle}
+      submitEditArticle = {this.submitEditArticle}
       />
     )
   }
@@ -83,8 +85,8 @@ class NewsContainer extends Component {
   }
 
   createArticle(article) {
+    if (article.id) delete article.id;
     article.author = `http://localhost:8080/authors/${article.authorId}`
-    article.category = article.category.toUpperCase();
     fetch('http://localhost:8080/articles', {
       method: 'POST',
       body: JSON.stringify(article),
@@ -94,11 +96,15 @@ class NewsContainer extends Component {
     .then(newArticle => {
       newArticle.author = this.findAuthorById(article.authorId);
       const articles = [...this.state.articles, newArticle];
-      console.log("New state:")
-      console.log(articles);
       this.setState({articles});
+
     })
     .catch(err => console.error);
+  }
+
+  submitEditArticle(article) {
+    console.log("EDITING:");
+    console.log(article);
   }
 
   createAuthor(author) {
@@ -122,6 +128,7 @@ editArticle(article){
 deleteArticle(id) {
   const articles = this.state.articles.filter(a => a.id !== id)
   this.setState({articles})
+
   fetch(`http://localhost:8080/articles/${id}`, {
     method: 'DELETE'
   })
