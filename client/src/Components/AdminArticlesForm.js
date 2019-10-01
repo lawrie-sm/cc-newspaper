@@ -29,6 +29,7 @@ class AdminArticlesForm extends Component {
     const authorNodes = this.props.authors.map((author, index) => (
       <option value={author.id} key={index}>{author.name}, {author.title}</option>
     ))
+
     return(
       <>
       <p>AdminArticlesForm</p>
@@ -77,6 +78,7 @@ class AdminArticlesForm extends Component {
 
       </>
     )
+
   }
 }
 
