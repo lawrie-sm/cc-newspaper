@@ -34,12 +34,14 @@ class AdminArticlesForm extends Component {
   }
 
   handleSubmit(evt){
+    evt.preventDefault();
     if (this.inputsAreValid()) {
       this.props.createArticle({...this.state})
     }
   }
 
   handleEditSubmit(evt){
+    evt.preventDefault();
     if (this.inputsAreValid()) {
       this.props.submitEditArticle({...this.state})
     }
