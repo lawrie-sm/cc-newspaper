@@ -1,0 +1,31 @@
+h1{
+  font-size: 70px;
+  font-family: freight-display-pro, serif;
+  font-weight: 700;
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+h3{
+  font-size: 20px;
+  font-family: freight-sans-pro, sans-serif;
+  font-weight: 600;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ededed;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.header{
+  padding-left: 15px;
+}
+.header-menu{
+  padding-right: 35px;
+}

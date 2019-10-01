@@ -140,7 +140,119 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
 
-        Article article7 = new Article("Volkswagen: Germany's first mass lawsuit begins",
+
+        Article article7 = new Article("Brexit: What happens now?",
+                "The Supreme Court has ruled that the suspension of Parliament on 9 September was unlawful and void. MPs returned to Westminster on Wednesday.\n" +
+                        "Where does this leave the wider Brexit process and how could it play out over the coming weeks?",
+                "A law designed to stop a no-deal Brexit on 31 October has been passed. If a deal is not agreed between the UK and EU by 19 October, and MPs don't vote in favour of leaving with no deal, then the prime minister will be legally obliged to ask the EU for a Brexit delay.\n" +
+                        "Get a new deal\n" +
+                        "Boris Johnson says he is trying to negotiate a new deal with the EU. If that happened and MPs backed it before 31 October there would be no need for an extension.\n" +
+                        "David Frost, the prime minister's lead Brexit negotiator, and Brexit Secretary Stephen Barclay have been meeting EU officials. The prime minister himself has held meetings with the leaders of member states and with Jean-Claude Juncker and Donald Tusk.\n" +
+                        "The existing deal negotiated by former Prime Minister Theresa May and her government has been defeated in the House of Commons several times - and Mr Johnson has said it is dead.\n" +
+                        "The government wants a deal with the backstop removed. That's the measure aimed at preventing any possibility of border posts and checks between Northern Ireland and the Republic of Ireland.\n" +
+                        "There has been some discussion that a possible option could be to go for a Northern Ireland-only backstop. In other words, Northern Ireland would remain more closely tied to the EU than the rest of the UK.\n" +
+                        "Critics say that would effectively mean a border in the Irish Sea. When she was in office, Theresa May said that was something no British prime minister could accept.",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.UK);
+
+        Article article8 = new Article("Cristiano Ronaldo and Lionel Messi: Is their era of dominance heading towards its end?",
+                "Seven weeks into the season, Cristiano Ronaldo and Lionel Messi have scored only three club goals between them.",
+                "Seven weeks into the season, Cristiano Ronaldo and Lionel Messi have scored only three club goals between them.\n" +
+                        "\n" +
+                        "The pair have dominated football for the past decade, with a combined 1,369 goals, 10 Ballons d'Or and nine Champions League titles.\n" +
+                        "\n" +
+                        "But with Barcelona and Argentina's Messi, 32, suffering from multiple injuries already this season and Juventus and Portugal forward Ronaldo, 34, no longer winning golden boots, are we witnessing the beginning of the end of the pair's era of dominance?",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.SPORT);
+
+
+        Article article9 = new Article("Rugby World Cup: England's Manu Tuilagi grateful to be in Japan",
+                "Of the little green shoots and bright sparks around England's predictably comfortable progress through their opening two World Cup group games, Manu Tuilagi's second try against Tonga perhaps hinted at more than any other.",
+                "The first was hardly shabby, as he smashed and twisted and powered through the defensive line.\n" +
+                        "\n" +
+                        "The second, too, wasn't only about the dummy run that sucked in two defenders and created time and space for the wide pass to Jonny May, or the supporting line to take a return pass from his winger and canter away.\n" +
+                        "\n" +
+                        "It was all those things, but it was also the smile on Tuilagi's face as he approached the try-line.\n" +
+                        "\n" +
+                        "No-one else in the England team plays with the same obvious enjoyment as the 28-year-old. And no-one else can quite do what he can when fit and in form.\n" +
+                        "\n" +
+                        "Tuilagi told BBC 5 Live: \"I always enjoyed rugby, since I started playing. But I just enjoy it more nowadays.\n" +
+                        "\n" +
+                        "\"I know now that it's not going to last forever, that I have to make the most of it.\n" +
+                        "\n" +
+                        "\"I'm just happy to be out there. You know, sometimes you take it for granted being able to train and being able to play but for me, going out there is what I love doing.\"\n" +
+                        "\n" +
+                        "For too much of the past six years Tuilagi has been unlucky with injury but also slow to realise how an international rugby player now has to behave.\n" +
+                        "\n" +
+                        "Since being one of the few on-pitch positives, aged just 20, as England crashed out of the 2011 World Cup, his list of misdemeanours and misfortunes have been long and varied.\n" +
+                        "\n" +
+                        "They include jumping off a ferry into Auckland harbour, making a rabbit ears sign behind then-Prime Minister David Cameron's head, punching Chris Ashton, tearing his hamstring, serious problems with both knees, assaulting two female police officers and a taxi driver, and returning to the England hotel drunk during a pre-season training camp.",
+                reg,
+                new GregorianCalendar(2019, Calendar.OCTOBER, 1), ArticleCategory.SPORT);
+
+        Article article10 = new Article("Wales school sex education classes 'should be compulsory'",
+                "Lessons about sexuality and relationships should be compulsory in schools, say Welsh Government advisers on domestic violence.\n" +
+                        "\n",
+                "Parents would not be able to take children out of classes, under proposals being considered.\n" +
+                        "\n" +
+                        "The education minister will decide soon whether to make new-look relationships and sexuality education (RSE) compulsory for three to 16-year-olds as part of Wales' new curriculum.\n" +
+                        "\n" +
+                        "An announcement is expected this week.",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.EDUCATION);
+
+        Article article11 = new Article("'Sadfishing' social media warning from school heads",
+                "A social-media \"trend\" is leaving young people with genuine mental health problems \"facing unfair and distressing criticism\", private-school leaders say.",
+                "\"Sadfishing\" is a growing \"behavioural trend\", where people make \"exaggerated claims about their emotional problems to generate sympathy\", the heads say.\n" +
+                        "And it means those with real problems are often overlooked or even bullied.\n" +
+                        "Young people are finding sadfishing very \"hard to manage\", the Headmasters' and Headmistresses' Conference says.\n" +
+                        "It commissioned a report, Digital Awareness UK, based on interviews with 50,000 pupils in the UK.\n" +
+                        "The report quotes a pupil who shared on social media they had been \"feeling really down\".\n" +
+                        "\"I got a lot of people commenting on and 'liking' my post but then some people said I was sadfishing, the next day at school, for attention,\" the pupil said.\n" +
+                        "Earlier this year a separate, Organisation for Economic Co-operation and Development (OECD) study, of 250,000 teachers in 48 countries, suggested schools in England had the highest incidence of problems with online behaviour.\n" +
+                        "It indicated 27% of head teachers in England had to deal with problems related to online bullying every week - compared with an international average of 3%.\n" +
+                        "Chris Jeffery, head teacher of Bootham School, in north Yorkshire, who chairs the HMC's wellbeing working group, said social media and mobile technology were now an \"inescapable aspect of the landscape of the lives of young people\".\n" +
+                        "\"Given the nature of that technology, trends are fast-moving and it is crucial that educators and parents have regular insights into how young people are using their devices,\" he said.\n",
+                reg,
+                new GregorianCalendar(2019, Calendar.OCTOBER, 1), ArticleCategory.EDUCATION);
+
+        Article article12= new Article("Is social media causing childhood depression?",
+                "Rangan Chatterjee is a GP and says he has seen plenty of evidence of the link between mental ill-health in youngsters and their use of social media.",
+                "One 16 year-old boy was referred to him after he self-harmed and ended up in A&E.\n" +
+                        "\n" +
+                        "\"The first thought was to put him on anti-depressants but I chatted to him and it sounded like his use of social media was having a negative impact on his health.\"\n" +
+                        "\n" +
+                        "So Dr Chatterjee suggested a simple solution - the teenager should attempt to wean himself off social media, restricting himself to just an hour before he went to bed. Over the course of a few weeks, he should extend this to two hours at night and two in the morning.\n" +
+                        "\n" +
+                        "\"He reported a significant improvement in his wellbeing and, after six months, I had a letter from his mother saying he was happier at school and integrated into the local community.\"\n" +
+                        "\n" +
+                        "That and similar cases have led him to question the role social media plays in the lives of young people.",
+                reg,
+                new GregorianCalendar(2019, Calendar.FEBRUARY, 10), ArticleCategory.EDUCATION);
+
+        Article article13= new Article("Ten films to watch this October",
+                "Including The Shining's sequel Doctor Sleep, Joker, and the Palme d’Or-winning Parasite, Nicholas Barber picks the movies not to be missed this month.",
+                "Joker won the top prize at this year’s Venice Film Festival, and Joaquin Phoenix is bound to get an Oscar nomination for his scary yet sympathetic central performance. All in all, that’s not bad going for the origin story of a DC Comics’ supervillain. But Todd Phillips’s film is dingier and nastier than the average Batman blockbuster. Set in the 1970s in rundown New York – sorry, Gotham City – it’s a tribute to two of Martin Scorsese’s urban-decay dramas, Taxi Driver and The King of Comedy, and it even has a cameo by their star, Robert De Niro. Does it match up to Scorsese’s own masterpieces? Perhaps not, but Xan Brooks from the Guardian believes that this “gloriously daring and explosive film” is “a tale that’s almost as twisted as the man at its centre, bulging with ideas and pitching towards anarchy”.",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 27), ArticleCategory.CULTURE);
+
+        Article article14= new Article("Ten books to read in October",
+                "From a head-spinning spy novel to a riveting memoir, Jane Ciabattari picks out some great reads for the month ahead.",
+                "Le Carré’s head-spinning new novel is inspired by recent tumultuous global events. Nat, 47, is back in London with his human-rights-lawyer wife Prue, after 25 years running agents in Britain’s Secret Intelligence Service in Moscow, Prague, Bucharest, and other former Soviet strongholds. As one last assignment, Nat is charged with reviving Haven, a London-based Russia outstation he sees as a “dumping ground”. Off-duty, he begins a tactically intricate badminton duel with Ed, a grouchy, distracted young researcher. They settle into a pattern of post-match drinks where Ed rails against Brexit and Trump. Nat even does a bit of matchmaking, introducing Ed to his deputy, Florence. By the time Nat recognises the implications of the radical realignment of the Anglo-American alliance, he finds himself under surveillance.",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.CULTURE);
+
+        Article article15= new Article("What will art look like in 20 years?",
+                "Devon Van Houten Maldonado asks artists and curators to imagine the changes and trends that will influence the art world in the next two decades.",
+                "The future may be uncertain, but some things are undeniable: climate change, shifting demographics, geopolitics. The only guarantee is that there will be changes, both wonderful and terrible. It’s worth considering how artists will respond to these changes, as well as what purpose art serves, now and in the future.\n" +
+                        "\n" +
+                        "Reports suggest that by 2040 the impacts of human-caused climate change will be unescapable, making it the big issue at the centre of art and life in 20 years’ time. Artists in the future will wrestle with the possibilities of the post-human and post-Anthropocene – artificial intelligence, human colonies in outer space and potential doom.\n" +
+                        "\n" +
+                        "The identity politics seen in art around the #MeToo and Black Lives Matter movements will grow as environmentalism, border politics and migration come even more sharply into focus. Art will become increasingly diverse and might not ‘look like art’ as we expect. In the future, once we’ve become weary of our lives being visible online for all to see and our privacy has been all but lost, anonymity may be more desirable than fame. Instead of thousands, or millions, of likes and followers, we will be starved for authenticity and connection. Art could, in turn, become  more collective and experiential, rather than individual.",
+                reg,
+                new GregorianCalendar(2019, Calendar.APRIL, 23), ArticleCategory.CULTURE);
+
+        Article article16 = new Article("Volkswagen: Germany's first mass lawsuit begins",
                 "Germany's first mass lawsuit begins as 450,000 owners of diesel Volkswagen cars take on the company.",
                 "They argue they are owed compensation for being sold cars based on misleading emissions data.\n" +
                         "\n" +
@@ -176,7 +288,7 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
 
-        Article article8 = new Article("Swiss auction off supercars of Equatorial Guinea leader’s son",
+        Article article17 = new Article("Swiss auction off supercars of Equatorial Guinea leader’s son",
                 "A collection of supercars confiscated from the son of Equatorial Guinea's president have been auctioned off in Switzerland.",
                 " The cars were seized by Swiss authorities as part of an investigation into Teodorin Nguema Obiang.\n" +
                         "\n" +
@@ -204,8 +316,6 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
 
-
-
         articleRepo.save(article1);
         articleRepo.save(article2);
         articleRepo.save(article3);
@@ -214,6 +324,17 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article6);
         articleRepo.save(article7);
         articleRepo.save(article8);
+
+        articleRepo.save(article9);
+        articleRepo.save(article10);
+        articleRepo.save(article11);
+        articleRepo.save(article12);
+        articleRepo.save(article13);
+        articleRepo.save(article14);
+        articleRepo.save(article15);
+        articleRepo.save(article16);
+        articleRepo.save(article17);
+
     }
 
 }

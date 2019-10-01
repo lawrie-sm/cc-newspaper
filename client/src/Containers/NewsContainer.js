@@ -54,10 +54,11 @@ class NewsContainer extends Component {
   main(props) {
     return (
       <Main
-        categories = {this.state.categories}
-        setCategory = {this.setCategory}
-        articles = {this.state.articles}
-        filter={this.state.selectedCategory}
+      categories = {this.state.categories}
+      setCategory = {this.setCategory}
+      articles = {this.state.articles}
+      filter={this.state.selectedCategory}
+      selectedCategory={this.state.selectedCategory}
       />
     )
   }
