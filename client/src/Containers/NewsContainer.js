@@ -14,7 +14,7 @@ class NewsContainer extends Component {
       authors: [],
       categories: [ "World", "UK", "Sport", "Culture", "Education"],
       selectedCategory: "",
-      selectedArticle: ""
+      selectedArticle: {}
     };
     this.setCategory = this.setCategory.bind(this);
     this.main = this.main.bind(this);

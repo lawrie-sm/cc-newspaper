@@ -21,8 +21,12 @@ class AdminArticlesForm extends Component {
     this.props.createArticle(this.state)
   }
 
+  componentDidUpdate(){
+    this.setState(this.props.selectedArticle)
+  }
+
   render(){
-    console.log("render");
+
     const categoryNodes = this.props.categories.map((c, index) => (
       <option value={c} key={index}>{c}</option>
     ))
@@ -37,26 +41,26 @@ class AdminArticlesForm extends Component {
       <form onSubmit={this.handleSubmit}>
       <div>
       <label htmlFor="title">Title:</label>
-      <input type="text" id="title" name="title" onChange={this.handleChange} value={this.props.selectedArticle.title} required />
+      <input type="text" id="title" name="title" value={this.state.title} onChange={this.handleChange} required />
       </div>
 
       <div>
-      <label htmlFor="summary" value={this.props.selectedArticle.summary}>Summary:</label>
-      <input type="text" id="summary" name="summary" onChange={this.handleChange} required />
+      <label htmlFor="summary">Summary:</label>
+      <input type="text" id="summary" name="summary" value={this.state.summary} onChange={this.handleChange} required />
       </div>
 
       <div>
-      <label htmlFor="text" value={this.props.selectedArticle.text}>Text:</label>
-      <input type="text" id="text" name="text" onChange={this.handleChange} required />
+      <label htmlFor="text">Text:</label>
+      <input type="text" id="text" name="text" value={this.state.text} onChange={this.handleChange} required />
       </div>
 
       <div>
-      <label htmlFor="date" value={this.props.selectedArticle.date}>Date:</label>
-      <input type="date" id="date" name="date" onChange={this.handleChange} required/>
+      <label htmlFor="date">Date:</label>
+      <input type="date" id="date" name="date" value={this.state.date} onChange={this.handleChange} required/>
       </div>
 
       <div>
-      <label htmlFor="category" value={this.props.selectedArticle.category}>Category:</label>
+      <label htmlFor="category">Category:</label>
       <select name="category" onChange={this.handleChange} required >
       <>
       {categoryNodes}
@@ -65,7 +69,7 @@ class AdminArticlesForm extends Component {
       </div>
 
       <div>
-      <label htmlFor="authorId" value={this.props.selectedArticle.authorId}>Author:</label>
+      <label htmlFor="authorId">Author:</label>
       <select name="authorId" onChange={this.handleChange} required >
       <>
       {authorNodes}
