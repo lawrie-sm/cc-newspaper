@@ -206,6 +206,20 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.EDUCATION);
 
+        Article article11 = new Article("'Sadfishing' social media warning from school heads",
+                "A social-media \"trend\" is leaving young people with genuine mental health problems \"facing unfair and distressing criticism\", private-school leaders say.",
+                "\"Sadfishing\" is a growing \"behavioural trend\", where people make \"exaggerated claims about their emotional problems to generate sympathy\", the heads say.\n" +
+                        "And it means those with real problems are often overlooked or even bullied.\n" +
+                        "Young people are finding sadfishing very \"hard to manage\", the Headmasters' and Headmistresses' Conference says.\n" +
+                        "It commissioned a report, Digital Awareness UK, based on interviews with 50,000 pupils in the UK.\n" +
+                        "The report quotes a pupil who shared on social media they had been \"feeling really down\".\n" +
+                        "\"I got a lot of people commenting on and 'liking' my post but then some people said I was sadfishing, the next day at school, for attention,\" the pupil said.\n" +
+                        "Earlier this year a separate, Organisation for Economic Co-operation and Development (OECD) study, of 250,000 teachers in 48 countries, suggested schools in England had the highest incidence of problems with online behaviour.\n" +
+                        "It indicated 27% of head teachers in England had to deal with problems related to online bullying every week - compared with an international average of 3%.\n" +
+                        "Chris Jeffery, head teacher of Bootham School, in north Yorkshire, who chairs the HMC's wellbeing working group, said social media and mobile technology were now an \"inescapable aspect of the landscape of the lives of young people\".\n" +
+                        "\"Given the nature of that technology, trends are fast-moving and it is crucial that educators and parents have regular insights into how young people are using their devices,\" he said.\n",
+                reg,
+                new GregorianCalendar(2019, Calendar.OCTOBER, 1), ArticleCategory.EDUCATION);
 
         authorRepo.save(reg);
         articleRepo.save(article1);
@@ -218,6 +232,7 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article8);
         articleRepo.save(article9);
         articleRepo.save(article10);
+        articleRepo.save(article11);
     }
 
 }
