@@ -17,15 +17,15 @@ class AdminArticlesForm extends Component {
     this.handleEditSubmit = this.handleEditSubmit.bind(this);
   }
 
-  handleChange({ target: { value, name } }) {
-    this.setState({[name]: value});
-  }
-
   componentDidUpdate(prevProps){
     if (this.props.selectedArticle &&
         this.props.selectedArticle !==prevProps.selectedArticle){
         this.setState({...this.props.selectedArticle, authorId: this.props.selectedArticle.author.id})
     }
+  }
+
+  handleChange({ target: { value, name } }) {
+    this.setState({[name]: value});
   }
 
   handleSubmit(evt){

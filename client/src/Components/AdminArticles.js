@@ -1,7 +1,7 @@
 import React from 'react';
 import AdminArticleListItem from './AdminArticleListItem';
 
-const AdminArticles = ({articles, deleteArticle, selectEditedArticle}) => {
+const AdminArticles = ({articles, deleteArticle, selectEditArticle}) => {
 
   const handleDelete = (id) => (
     () => {
@@ -10,7 +10,7 @@ const AdminArticles = ({articles, deleteArticle, selectEditedArticle}) => {
   )
   const handleEdit = (a) => (
     () => {
-      selectEditedArticle(a)
+      selectEditArticle(a)
     }
   )
 

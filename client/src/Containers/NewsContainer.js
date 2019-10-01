@@ -15,18 +15,21 @@ class NewsContainer extends Component {
       authors: [],
       categories: [ "WORLD", "UK", "SPORT", "CULTURE", "EDUCATION"],
       selectedCategory: "",
-      selectedArticle: {}
+      selectedArticle: {},
+      selectedAuthor: {},
     };
     this.setCategory = this.setCategory.bind(this);
     this.main = this.main.bind(this);
     this.admin = this.admin.bind(this);
     this.articleDetail = this.articleDetail.bind(this);
-    this.deleteArticle = this.deleteArticle.bind(this);
-    this.selectEditedArticle = this.selectEditedArticle.bind(this);
-    this.submitEditArticle = this.submitEditArticle.bind(this);
     this.createArticle = this.createArticle.bind(this);
-    this.deleteAuthor = this.deleteAuthor.bind(this);
+    this.deleteArticle = this.deleteArticle.bind(this);
+    this.selectEditArticle = this.selectEditArticle.bind(this);
+    this.submitEditArticle = this.submitEditArticle.bind(this);
     this.createAuthor = this.createAuthor.bind(this);
+    this.deleteAuthor = this.deleteAuthor.bind(this);
+    this.selectEditAuthor = this.selectEditAuthor.bind(this);
+    this.submitEditAuthor = this.submitEditAuthor.bind(this);
   }
 
   componentDidMount() {
@@ -66,12 +69,15 @@ class NewsContainer extends Component {
         authors = {this.state.authors}
         categories= {this.state.categories}
         selectedArticle = {this.state.selectedArticle}
+        selectedAuthor = {this.state.selectedAuthor}
         deleteArticle = {this.deleteArticle}
         createArticle = {this.createArticle}
+        selectEditArticle = {this.selectEditArticle}
+        submitEditArticle = {this.submitEditArticle}
         deleteAuthor = {this.deleteAuthor}
         createAuthor = {this.createAuthor}
-        selectEditedArticle = {this.selectEditedArticle}
-        submitEditArticle = {this.submitEditArticle}
+        selectEditAuthor = {this.selectEditAuthor}
+        submitEditAuthor = {this.submitEditAuthor}
       />
     )
   }
@@ -101,7 +107,7 @@ class NewsContainer extends Component {
       });
   }
 
-  selectEditedArticle(article){
+  selectEditArticle(article){
     this.setState({selectedArticle: article});
   }
 
@@ -124,6 +130,21 @@ class NewsContainer extends Component {
     const authors = this.state.authors.filter(a => a.id !== id)
     const articles = this.state.articles.filter(a => a.author.id !== id)
     this.setState({authors, articles})
+  }
+
+  selectEditAuthor(id) {
+    const selectedAuthor = this.findAuthorById(id);
+    this.setState({selectedAuthor});
+  }
+  
+  submitEditAuthor(author) {
+    api.patchAuthor(author)
+      .then(newAuthor => {
+        let authors = [...this.state.authors];
+        const index = authors.findIndex(a => a.id === author.id);
+        authors[index] = newAuthor;
+        this.setState({authors});
+      });
   }
 
   render() {

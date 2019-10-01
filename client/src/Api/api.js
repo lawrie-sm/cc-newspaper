@@ -33,9 +33,22 @@ export const deleteArticle = (id) => {
 };
 
 export const postAuthor = (author) => new Promise((res, rej) => {
+  if (author.id) delete author.id;
   fetch(`${url}/authors`,
     {
       method: 'POST',
+      body: JSON.stringify(author),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(res => res.json())
+    .then(newAuthor => res(newAuthor))
+    .catch(err => rej(err));
+});
+
+export const patchAuthor = (author) => new Promise((res, rej) => {
+  fetch(`${url}/authors/${author.id}`,
+    {
+      method: 'PATCH',
       body: JSON.stringify(author),
       headers: { 'Content-Type': 'application/json' }
     })

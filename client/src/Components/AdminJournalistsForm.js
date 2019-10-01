@@ -12,6 +12,13 @@ class AdminJournalistsForm extends Component {
     this.handleEditSubmit = this.handleEditSubmit.bind(this);
   }
 
+  componentDidUpdate(prevProps){
+    if (this.props.selectedAuthor &&
+        this.props.selectedAuthor !==prevProps.selectedAuthor){
+        this.setState(this.props.selectedAuthor)
+    }
+  }
+
   handleChange({ target: { value, name } }) {
     this.setState({[name]: value});
   }
@@ -23,7 +30,7 @@ class AdminJournalistsForm extends Component {
 
   handleEditSubmit(evt){
     evt.preventDefault();
-    this.props.editAuthor(this.state)
+    this.props.submitEditAuthor(this.state)
   }
 
   render() {

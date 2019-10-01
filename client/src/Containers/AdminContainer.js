@@ -13,15 +13,21 @@ class AdminContainer extends Component {
         <AdminArticles
           articles = {this.props.articles}
           deleteArticle = {this.props.deleteArticle}
-          selectEditedArticle = {this.props.selectEditedArticle} />
-        <AdminJournalists authors = {this.props.authors} deleteAuthor = {this.props.deleteAuthor} />
+          selectEditArticle = {this.props.selectEditArticle} />
+        <AdminJournalists
+          authors = {this.props.authors}
+          deleteAuthor = {this.props.deleteAuthor}
+          selectEditAuthor = {this.props.selectEditAuthor} />
         <AdminArticlesForm
           categories = {this.props.categories} 
           authors = {this.props.authors}
           selectedArticle = {this.props.selectedArticle}
           createArticle = {this.props.createArticle}
           submitEditArticle = {this.props.submitEditArticle} />
-        <AdminJournalistsForm createAuthor = {this.props.createAuthor} />
+        <AdminJournalistsForm
+          selectedAuthor = {this.props.selectedAuthor}
+          createAuthor = {this.props.createAuthor}
+          submitEditAuthor = {this.props.submitEditAuthor} />
         </>
       )
     }
