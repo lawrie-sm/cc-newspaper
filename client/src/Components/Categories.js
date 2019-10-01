@@ -4,7 +4,7 @@ import './Categories.css';
 
 const Categories = (props) => {
   const buttonNodes = props.categories.map((value, i) => (
-      <button value={value} key={i} class={props.selectedCategory == value ? "selectedCategoryButton" : "categoryButton" } onClick={handleClick}>{value}</button>
+      <button value={value} key={i} className={props.selectedCategory == value ? "selectedCategoryButton" : "categoryButton" } onClick={handleClick}>{value}</button>
   ));
 
   function handleClick(evt){
@@ -13,7 +13,7 @@ const Categories = (props) => {
 
   return(
     <div class="categories-container">
-      <button value="" onClick={handleClick} class={props.selectedCategory == "" ? "selectedCategoryButton" : "categoryButton" }>All</button>
+      <button value="" onClick={handleClick} className={props.selectedCategory == "" ? "selectedCategoryButton" : "categoryButton" }>All</button>
       {buttonNodes}
     </div>
   )
