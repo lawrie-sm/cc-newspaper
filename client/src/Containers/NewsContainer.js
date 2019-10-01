@@ -72,7 +72,7 @@ class NewsContainer extends Component {
       editArticle = {this.editArticle}
       deleteAuthor = {this.deleteAuthor}
       createAuthor = {this.createAuthor}
-      selectedArticle = {this.selectedArticle}
+      selectedArticle = {this.state.selectedArticle}
       />
     )
   }
