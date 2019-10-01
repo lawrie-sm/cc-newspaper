@@ -195,6 +195,18 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.OCTOBER, 1), ArticleCategory.SPORT);
 
+        Article article10 = new Article("Wales school sex education classes 'should be compulsory'",
+                "Lessons about sexuality and relationships should be compulsory in schools, say Welsh Government advisers on domestic violence.\n" +
+                        "\n",
+                "Parents would not be able to take children out of classes, under proposals being considered.\n" +
+                        "\n" +
+                        "The education minister will decide soon whether to make new-look relationships and sexuality education (RSE) compulsory for three to 16-year-olds as part of Wales' new curriculum.\n" +
+                        "\n" +
+                        "An announcement is expected this week.",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.EDUCATION);
+
+
         authorRepo.save(reg);
         articleRepo.save(article1);
         articleRepo.save(article2);
@@ -205,6 +217,7 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article7);
         articleRepo.save(article8);
         articleRepo.save(article9);
+        articleRepo.save(article10);
     }
 
 }
