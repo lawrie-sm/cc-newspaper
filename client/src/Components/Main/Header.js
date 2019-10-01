@@ -4,13 +4,13 @@ import './Header.css';
 
 const Header = () => (
   <>
-    <div class="container">
+    <div className="container">
       <div>
-      <Link to="/"><h1 class="header">Newspaper Name</h1></Link>
+      <Link to="/"><h1 className="header">Newspaper Name</h1></Link>
       </div>
-      <div class="buttons">
-      <Link to="/"><h3 class="header-menu">Articles</h3></Link>
-      <Link to="/admin" class="header-menu"><h3>Admin</h3></Link>
+      <div className="buttons">
+      <Link to="/"><h3 className="header-menu">Articles</h3></Link>
+      <Link to="/admin" className="header-menu"><h3>Admin</h3></Link>
       </div>
     </div>
   </>
