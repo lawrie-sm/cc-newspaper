@@ -45,7 +45,7 @@ class NewsContainer extends Component {
   }
 
   findAuthorById(id) {
-    return this.state.authors.find(a => a.id === id);
+    return this.state.authors.find(a => a.id == id);
   }
 
   main(props) {
@@ -74,7 +74,7 @@ class NewsContainer extends Component {
   }
 
   articleDetail(props) {
-    const article = this.state.articles.find(a => a.id === props.match.params.id);
+    const article = this.state.articles.find(a => a.id == props.match.params.id);
     return <ArticleDetail article={article} />
   }
 
