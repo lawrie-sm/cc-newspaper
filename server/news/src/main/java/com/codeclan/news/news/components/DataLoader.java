@@ -241,9 +241,9 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 27), ArticleCategory.CULTURE);
 
-        Article article14= new Article("",
-                "",
-                "",
+        Article article14= new Article("Ten books to read in October",
+                "From a head-spinning spy novel to a riveting memoir, Jane Ciabattari picks out some great reads for the month ahead.",
+                "Le Carré’s head-spinning new novel is inspired by recent tumultuous global events. Nat, 47, is back in London with his human-rights-lawyer wife Prue, after 25 years running agents in Britain’s Secret Intelligence Service in Moscow, Prague, Bucharest, and other former Soviet strongholds. As one last assignment, Nat is charged with reviving Haven, a London-based Russia outstation he sees as a “dumping ground”. Off-duty, he begins a tactically intricate badminton duel with Ed, a grouchy, distracted young researcher. They settle into a pattern of post-match drinks where Ed rails against Brexit and Trump. Nat even does a bit of matchmaking, introducing Ed to his deputy, Florence. By the time Nat recognises the implications of the radical realignment of the Anglo-American alliance, he finds himself under surveillance.",
                 reg,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.CULTURE);
 
