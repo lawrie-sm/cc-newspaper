@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Header from '../Components/Header';
-import ArticleDetail from '../Components/ArticleDetail';
-import AdminContainer from './AdminContainer';
-import Main from '../Components/Main';
+import Header from '../Components/Main/Header';
+import ArticleDetail from '../Components/Main/ArticleDetail';
+import AdminContainer from '../Components/Admin/AdminComponent';
+import Main from '../Components/Main/Main';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import * as api from '../Api/api.js'
 
