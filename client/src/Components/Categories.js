@@ -1,8 +1,10 @@
 import React from 'react';
+import './Categories.css';
+
 
 const Categories = (props) => {
   const buttonNodes = props.categories.map((value, i) => (
-      <button value={value} key={i} onClick={handleClick}>{value}</button>
+      <button value={value} key={i} class="categoryButton" onClick={handleClick}>{value}</button>
   ));
 
   function handleClick(evt){
@@ -10,11 +12,10 @@ const Categories = (props) => {
   }
 
   return(
-    <>
-    <h2>Categories</h2>
-      <button value="" onClick={handleClick}>All</button>
+    <div class="categories-container">
+      <button value="" onClick={handleClick} class="categoryButton">All</button>
       {buttonNodes}
-    </>
+    </div>
   )
 }
 

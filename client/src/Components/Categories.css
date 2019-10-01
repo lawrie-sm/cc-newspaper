@@ -1,0 +1,22 @@
+.categoryButton {
+	-moz-border-radius:33px;
+	-webkit-border-radius:33px;
+	border-radius:33px;
+  border: none;
+	display:inline-block;
+	cursor:pointer;
+	padding:4px 58px;
+	text-decoration:none;
+  font-family: freight-sans-pro, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 5px;
+  background-color:#bfe6d6;
+}
+.categoryButton:hover {
+	background-color:#9ad8bf;
+}
+.categories-container{
+  padding: 25px 0px;
+  border-bottom: 1px solid #ededed;
+}
