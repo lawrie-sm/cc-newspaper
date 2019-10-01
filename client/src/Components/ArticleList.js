@@ -9,7 +9,6 @@ const ArticleList = ({filter, articles}) => {
 
   return (
     <>
-    <h3>ArticleList</h3>
     <ul>{articleNodes}</ul>
     </>
   )
