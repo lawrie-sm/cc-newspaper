@@ -137,6 +137,20 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
 
+        Article article7 = new Article("Brexit: What happens now?",
+                "The Supreme Court has ruled that the suspension of Parliament on 9 September was unlawful and void. MPs returned to Westminster on Wednesday.\n" +
+                        "Where does this leave the wider Brexit process and how could it play out over the coming weeks?",
+                "A law designed to stop a no-deal Brexit on 31 October has been passed. If a deal is not agreed between the UK and EU by 19 October, and MPs don't vote in favour of leaving with no deal, then the prime minister will be legally obliged to ask the EU for a Brexit delay.\n" +
+                        "Get a new deal\n" +
+                        "Boris Johnson says he is trying to negotiate a new deal with the EU. If that happened and MPs backed it before 31 October there would be no need for an extension.\n" +
+                        "David Frost, the prime minister's lead Brexit negotiator, and Brexit Secretary Stephen Barclay have been meeting EU officials. The prime minister himself has held meetings with the leaders of member states and with Jean-Claude Juncker and Donald Tusk.\n" +
+                        "The existing deal negotiated by former Prime Minister Theresa May and her government has been defeated in the House of Commons several times - and Mr Johnson has said it is dead.\n" +
+                        "The government wants a deal with the backstop removed. That's the measure aimed at preventing any possibility of border posts and checks between Northern Ireland and the Republic of Ireland.\n" +
+                        "There has been some discussion that a possible option could be to go for a Northern Ireland-only backstop. In other words, Northern Ireland would remain more closely tied to the EU than the rest of the UK.\n" +
+                        "Critics say that would effectively mean a border in the Irish Sea. When she was in office, Theresa May said that was something no British prime minister could accept.",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.UK);
+
         authorRepo.save(reg);
         articleRepo.save(article1);
         articleRepo.save(article2);
@@ -144,6 +158,7 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article4);
         articleRepo.save(article5);
         articleRepo.save(article6);
+        articleRepo.save(article7);
     }
 
 }
