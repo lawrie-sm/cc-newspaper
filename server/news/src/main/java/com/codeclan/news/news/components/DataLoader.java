@@ -26,6 +26,9 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
 
         Author reg = new Author("reporter", "reg");
+        Author katie = new Author("editor", "katie");
+        authorRepo.save(reg);
+        authorRepo.save(katie);
         Article article1 = new Article("Be More Chill: The word-of-mouth hit musical now heading to London\n",
                 "A new musical which became a word-of-mouth hit in the US is set to open in London after a successful Broadway run",
                 "Be More Chill, which has been praised for attracting a new teen audience to the theatre, will open at The Other Palace in February, the BBC can reveal.\n" +
@@ -45,7 +48,7 @@ public class DataLoader implements ApplicationRunner {
                         "As a result, the show was revived by its creators the following year, first as an off-Broadway production before it transferred to the Lyceum Theatre for a run on Broadway.\n" +
                         "\n" +
                         "\"I'm a little older and so I'm used to word-of-mouth being telling my friends about an amazing show or movie,\" Be More Chill's producer Jerry Goehring tells BBC News. \"And in the old days we had radio that would play a song and it would be popular. Word of mouth would happen in different ways.\n",
-                reg,
+                katie,
                 new GregorianCalendar(2019, Calendar.JANUARY, 10),ArticleCategory.CULTURE );
 
         Article article2 = new Article("Claim over Boris Johnson's behaviour 'deeply concerning",
@@ -62,7 +65,7 @@ public class DataLoader implements ApplicationRunner {
                         "In her first column for the Sunday Times - published on the eve of the Conservative conference in Manchester - Ms Edwardes said she was seated on Mr Johnson's right at the lunch, held at the Spectator magazine's offices.\n" +
                         "\n" +
                         "Mr Johnson was editor of the magazine at the time.\n",
-                reg,
+                katie,
                 new GregorianCalendar(2019, Calendar.FEBRUARY, 10 ), ArticleCategory.UK);
 
         Article article3 = new Article("Russian GP: Can Ferrari control Charles Leclerc and Sebastian Vettel fall-out?\n",
@@ -78,7 +81,7 @@ public class DataLoader implements ApplicationRunner {
                         "There is so much at stake here - a proud champion fighting for his position in the team, which is patently under threat from an extravagantly talented youngster, and a team boss struggling to contain the potentially volcanic mix when two alphas are in the same cage.\n" +
                         "\n" +
                         "In the end, the way the race turned out, Ferrari were able to keep a lid on the situation - publicly at least. But as the dust settled afterwards, from what was not said as much as what was, it was hard to believe that the matter would rest there.",
-                reg,
+                katie,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.SPORT);
 
         Article article4 = new Article("Saudi crown prince warns of 'Iran threat' to global oil",
@@ -313,9 +316,6 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
 
-
-
-        authorRepo.save(reg);
         articleRepo.save(article1);
         articleRepo.save(article2);
         articleRepo.save(article3);
