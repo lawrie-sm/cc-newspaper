@@ -235,6 +235,24 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.FEBRUARY, 10), ArticleCategory.EDUCATION);
 
+        Article article13= new Article("Ten films to watch this October",
+                "Including The Shining's sequel Doctor Sleep, Joker, and the Palme d’Or-winning Parasite, Nicholas Barber picks the movies not to be missed this month.",
+                "Joker won the top prize at this year’s Venice Film Festival, and Joaquin Phoenix is bound to get an Oscar nomination for his scary yet sympathetic central performance. All in all, that’s not bad going for the origin story of a DC Comics’ supervillain. But Todd Phillips’s film is dingier and nastier than the average Batman blockbuster. Set in the 1970s in rundown New York – sorry, Gotham City – it’s a tribute to two of Martin Scorsese’s urban-decay dramas, Taxi Driver and The King of Comedy, and it even has a cameo by their star, Robert De Niro. Does it match up to Scorsese’s own masterpieces? Perhaps not, but Xan Brooks from the Guardian believes that this “gloriously daring and explosive film” is “a tale that’s almost as twisted as the man at its centre, bulging with ideas and pitching towards anarchy”.",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 27), ArticleCategory.CULTURE);
+
+        Article article14= new Article("",
+                "",
+                "",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.CULTURE);
+
+        Article article15= new Article("",
+                "",
+                "",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.CULTURE);
+
 
         authorRepo.save(reg);
         articleRepo.save(article1);
@@ -249,6 +267,7 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article10);
         articleRepo.save(article11);
         articleRepo.save(article12);
+        articleRepo.save(article13);
     }
 
 }
