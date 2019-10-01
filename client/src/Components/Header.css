@@ -24,5 +24,8 @@ a{
   justify-content: flex-end;
 }
 .header{
-  padding-right: 25px;
+  padding-left: 15px;
+}
+.header-menu{
+  padding-right: 35px;
 }
