@@ -171,7 +171,29 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.SPORT);
 
-
+        Article article9 = new Article("Rugby World Cup: England's Manu Tuilagi grateful to be in Japan",
+                "Of the little green shoots and bright sparks around England's predictably comfortable progress through their opening two World Cup group games, Manu Tuilagi's second try against Tonga perhaps hinted at more than any other.",
+                "The first was hardly shabby, as he smashed and twisted and powered through the defensive line.\n" +
+                        "\n" +
+                        "The second, too, wasn't only about the dummy run that sucked in two defenders and created time and space for the wide pass to Jonny May, or the supporting line to take a return pass from his winger and canter away.\n" +
+                        "\n" +
+                        "It was all those things, but it was also the smile on Tuilagi's face as he approached the try-line.\n" +
+                        "\n" +
+                        "No-one else in the England team plays with the same obvious enjoyment as the 28-year-old. And no-one else can quite do what he can when fit and in form.\n" +
+                        "\n" +
+                        "Tuilagi told BBC 5 Live: \"I always enjoyed rugby, since I started playing. But I just enjoy it more nowadays.\n" +
+                        "\n" +
+                        "\"I know now that it's not going to last forever, that I have to make the most of it.\n" +
+                        "\n" +
+                        "\"I'm just happy to be out there. You know, sometimes you take it for granted being able to train and being able to play but for me, going out there is what I love doing.\"\n" +
+                        "\n" +
+                        "For too much of the past six years Tuilagi has been unlucky with injury but also slow to realise how an international rugby player now has to behave.\n" +
+                        "\n" +
+                        "Since being one of the few on-pitch positives, aged just 20, as England crashed out of the 2011 World Cup, his list of misdemeanours and misfortunes have been long and varied.\n" +
+                        "\n" +
+                        "They include jumping off a ferry into Auckland harbour, making a rabbit ears sign behind then-Prime Minister David Cameron's head, punching Chris Ashton, tearing his hamstring, serious problems with both knees, assaulting two female police officers and a taxi driver, and returning to the England hotel drunk during a pre-season training camp.",
+                reg,
+                new GregorianCalendar(2019, Calendar.OCTOBER, 1), ArticleCategory.SPORT);
 
         authorRepo.save(reg);
         articleRepo.save(article1);
@@ -182,6 +204,7 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article6);
         articleRepo.save(article7);
         articleRepo.save(article8);
+        articleRepo.save(article9);
     }
 
 }
