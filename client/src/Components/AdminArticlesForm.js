@@ -19,8 +19,8 @@ class AdminArticlesForm extends Component {
 
   componentDidUpdate(prevProps){
     if (this.props.selectedArticle &&
-        this.props.selectedArticle !==prevProps.selectedArticle){
-        this.setState({...this.props.selectedArticle, authorId: this.props.selectedArticle.author.id})
+      this.props.selectedArticle !==prevProps.selectedArticle){
+      this.setState({...this.props.selectedArticle, authorId: this.props.selectedArticle.author.id})
     }
   }
 
@@ -28,14 +28,21 @@ class AdminArticlesForm extends Component {
     this.setState({[name]: value});
   }
 
+  inputsAreValid() {
+    const s = this.state;
+    return !!(s.title && s.summary && s.text && s.date);
+  }
+
   handleSubmit(evt){
-    evt.preventDefault();
-    this.props.createArticle({...this.state})
+    if (this.inputsAreValid()) {
+      this.props.createArticle({...this.state})
+    }
   }
 
   handleEditSubmit(evt){
-    evt.preventDefault();
-    this.props.submitEditArticle({...this.state})
+    if (this.inputsAreValid()) {
+      this.props.submitEditArticle({...this.state})
+    }
   }
 
   render(){

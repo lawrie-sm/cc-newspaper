@@ -23,14 +23,21 @@ class AdminJournalistsForm extends Component {
     this.setState({[name]: value});
   }
 
+  inputsAreValid() {
+    const s = this.state;
+    return !!(s.title && s.name);
+  }
+
   handleSubmit(evt){
-    evt.preventDefault();
-    this.props.createAuthor(this.state)
+    if (this.inputsAreValid()) {
+      this.props.createAuthor(this.state)
+    }
   }
 
   handleEditSubmit(evt){
-    evt.preventDefault();
-    this.props.submitEditAuthor(this.state)
+    if (this.inputsAreValid()) {
+      this.props.submitEditAuthor(this.state)
+    }
   }
 
   render() {
