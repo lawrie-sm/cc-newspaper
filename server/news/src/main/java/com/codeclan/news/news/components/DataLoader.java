@@ -247,11 +247,15 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.CULTURE);
 
-        Article article15= new Article("",
-                "",
-                "",
+        Article article15= new Article("What will art look like in 20 years?",
+                "Devon Van Houten Maldonado asks artists and curators to imagine the changes and trends that will influence the art world in the next two decades.",
+                "The future may be uncertain, but some things are undeniable: climate change, shifting demographics, geopolitics. The only guarantee is that there will be changes, both wonderful and terrible. It’s worth considering how artists will respond to these changes, as well as what purpose art serves, now and in the future.\n" +
+                        "\n" +
+                        "Reports suggest that by 2040 the impacts of human-caused climate change will be unescapable, making it the big issue at the centre of art and life in 20 years’ time. Artists in the future will wrestle with the possibilities of the post-human and post-Anthropocene – artificial intelligence, human colonies in outer space and potential doom.\n" +
+                        "\n" +
+                        "The identity politics seen in art around the #MeToo and Black Lives Matter movements will grow as environmentalism, border politics and migration come even more sharply into focus. Art will become increasingly diverse and might not ‘look like art’ as we expect. In the future, once we’ve become weary of our lives being visible online for all to see and our privacy has been all but lost, anonymity may be more desirable than fame. Instead of thousands, or millions, of likes and followers, we will be starved for authenticity and connection. Art could, in turn, become  more collective and experiential, rather than individual.",
                 reg,
-                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.CULTURE);
+                new GregorianCalendar(2019, Calendar.APRIL, 23), ArticleCategory.CULTURE);
 
 
         authorRepo.save(reg);
@@ -268,6 +272,8 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article11);
         articleRepo.save(article12);
         articleRepo.save(article13);
+        articleRepo.save(article14);
+        articleRepo.save(article15);
     }
 
 }
