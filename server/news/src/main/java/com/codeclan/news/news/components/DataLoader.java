@@ -221,6 +221,21 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.OCTOBER, 1), ArticleCategory.EDUCATION);
 
+        Article article12= new Article("Is social media causing childhood depression?",
+                "Rangan Chatterjee is a GP and says he has seen plenty of evidence of the link between mental ill-health in youngsters and their use of social media.",
+                "One 16 year-old boy was referred to him after he self-harmed and ended up in A&E.\n" +
+                        "\n" +
+                        "\"The first thought was to put him on anti-depressants but I chatted to him and it sounded like his use of social media was having a negative impact on his health.\"\n" +
+                        "\n" +
+                        "So Dr Chatterjee suggested a simple solution - the teenager should attempt to wean himself off social media, restricting himself to just an hour before he went to bed. Over the course of a few weeks, he should extend this to two hours at night and two in the morning.\n" +
+                        "\n" +
+                        "\"He reported a significant improvement in his wellbeing and, after six months, I had a letter from his mother saying he was happier at school and integrated into the local community.\"\n" +
+                        "\n" +
+                        "That and similar cases have led him to question the role social media plays in the lives of young people.",
+                reg,
+                new GregorianCalendar(2019, Calendar.FEBRUARY, 10), ArticleCategory.EDUCATION);
+
+
         authorRepo.save(reg);
         articleRepo.save(article1);
         articleRepo.save(article2);
@@ -233,6 +248,7 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article9);
         articleRepo.save(article10);
         articleRepo.save(article11);
+        articleRepo.save(article12);
     }
 
 }
