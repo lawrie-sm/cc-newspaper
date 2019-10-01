@@ -6,7 +6,11 @@ class AdminArticlesForm extends Component {
     super(props);
     this.state = {
       category: this.props.categories[0],
-      authorId: this.props.authors[0].id
+      authorId: this.props.authors[0].id,
+      title: "",
+      text: "",
+      summary: "",
+      date: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,13 +20,18 @@ class AdminArticlesForm extends Component {
     this.setState({[name]: value});
   }
 
+  componentDidUpdate(prevProps){
+    if (
+        this.props.selectedArticle &&
+        this.props.selectedArticle !==prevProps.selectedArticle){
+        this.setState(this.props.selectedArticle)
+        console.log("mount");
+    }
+  }
+
   handleSubmit(evt){
     evt.preventDefault();
     this.props.createArticle(this.state)
-  }
-
-  componentDidUpdate(){
-    this.setState(this.props.selectedArticle)
   }
 
   render(){
