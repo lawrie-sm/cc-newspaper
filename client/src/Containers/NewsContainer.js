@@ -19,9 +19,9 @@ class NewsContainer extends Component {
       selectedAuthor: {},
     };
     this.setCategory = this.setCategory.bind(this);
-    this.main = this.main.bind(this);
-    this.admin = this.admin.bind(this);
-    this.articleDetail = this.articleDetail.bind(this);
+    this.renderMain = this.renderMain.bind(this);
+    this.renderAdmin = this.renderAdmin.bind(this);
+    this.renderArticleDetail = this.renderArticleDetail.bind(this);
     this.createArticle = this.createArticle.bind(this);
     this.deleteArticle = this.deleteArticle.bind(this);
     this.selectEditArticle = this.selectEditArticle.bind(this);
@@ -43,50 +43,24 @@ class NewsContainer extends Component {
       .catch(err => console.error);
   }
 
-  setCategory(category){
-    this.setState({selectedCategory: category})
-  }
-
   findAuthorById(id) {
     return this.state.authors.find(a => a.id == id);
   }
 
-  main(props) {
-    return (
-      <Main
-      categories = {this.state.categories}
-      setCategory = {this.setCategory}
-      articles = {this.state.articles}
-      filter={this.state.selectedCategory}
-      selectedCategory={this.state.selectedCategory}
-      />
-    )
+  setCategory(category){
+    this.setState({selectedCategory: category})
   }
 
-  admin(props) {
-    return (
-      <AdminContainer
-        articles = {this.state.articles}
-        authors = {this.state.authors}
-        categories= {this.state.categories}
-        selectedArticle = {this.state.selectedArticle}
-        selectedAuthor = {this.state.selectedAuthor}
-        deleteArticle = {this.deleteArticle}
-        createArticle = {this.createArticle}
-        selectEditArticle = {this.selectEditArticle}
-        submitEditArticle = {this.submitEditArticle}
-        deleteAuthor = {this.deleteAuthor}
-        createAuthor = {this.createAuthor}
-        selectEditAuthor = {this.selectEditAuthor}
-        submitEditAuthor = {this.submitEditAuthor}
-      />
-    )
+  selectEditArticle(article){
+    this.setState({selectedArticle: article});
   }
 
-  articleDetail(props) {
-    const article = this.state.articles.find(a => a.id == props.match.params.id);
-    return <ArticleDetail article={article} />
+  selectEditAuthor(id) {
+    const selectedAuthor = this.findAuthorById(id);
+    this.setState({selectedAuthor});
   }
+
+  // CRUD functions
 
   createArticle(article) {
     api.postArticle(article)
@@ -106,10 +80,6 @@ class NewsContainer extends Component {
         articles[index] = newArticle;
         this.setState({articles});
       });
-  }
-
-  selectEditArticle(article){
-    this.setState({selectedArticle: article});
   }
 
   deleteArticle(id) {
@@ -133,11 +103,6 @@ class NewsContainer extends Component {
     this.setState({authors, articles})
   }
 
-  selectEditAuthor(id) {
-    const selectedAuthor = this.findAuthorById(id);
-    this.setState({selectedAuthor});
-  }
-  
   submitEditAuthor(author) {
     api.patchAuthor(author)
       .then(newAuthor => {
@@ -148,15 +113,54 @@ class NewsContainer extends Component {
       });
   }
 
+  // Render Functions
+
+  renderMain(props) {
+    return (
+      <Main
+      categories = {this.state.categories}
+      setCategory = {this.setCategory}
+      articles = {this.state.articles}
+      filter={this.state.selectedCategory}
+      selectedCategory={this.state.selectedCategory}
+      />
+    )
+  }
+
+  renderArticleDetail(props) {
+    const article = this.state.articles.find(a => a.id == props.match.params.id);
+    return <ArticleDetail article={article} />
+  }
+
+  renderAdmin(props) {
+    return (
+      <AdminContainer
+        articles = {this.state.articles}
+        authors = {this.state.authors}
+        categories= {this.state.categories}
+        selectedArticle = {this.state.selectedArticle}
+        selectedAuthor = {this.state.selectedAuthor}
+        deleteArticle = {this.deleteArticle}
+        createArticle = {this.createArticle}
+        selectEditArticle = {this.selectEditArticle}
+        submitEditArticle = {this.submitEditArticle}
+        deleteAuthor = {this.deleteAuthor}
+        createAuthor = {this.createAuthor}
+        selectEditAuthor = {this.selectEditAuthor}
+        submitEditAuthor = {this.submitEditAuthor}
+      />
+    )
+  }
+
   render() {
     return (
       <Router>
         <React.Fragment>
           <Header />
           <Switch>
-            <Route exact path="/" render={this.main} />
-            <Route exact path="/admin" render={this.admin} />
-            <Route path="/article/:id" render={this.articleDetail} />
+            <Route exact path="/" render={this.renderMain} />
+            <Route exact path="/admin" render={this.renderAdmin} />
+            <Route path="/article/:id" render={this.renderArticleDetail} />
           </Switch>
         </React.Fragment>
       </Router>
