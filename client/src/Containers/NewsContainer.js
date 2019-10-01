@@ -4,6 +4,7 @@ import ArticleDetail from '../Components/ArticleDetail';
 import AdminContainer from './AdminContainer';
 import Main from '../Components/Main';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import * as api from '../Api/api.js'
 
 class NewsContainer extends Component {
 
@@ -21,26 +22,22 @@ class NewsContainer extends Component {
     this.admin = this.admin.bind(this);
     this.articleDetail = this.articleDetail.bind(this);
     this.deleteArticle = this.deleteArticle.bind(this);
-    this.editArticle = this.editArticle.bind(this);
+    this.selectEditedArticle = this.selectEditedArticle.bind(this);
     this.submitEditArticle = this.submitEditArticle.bind(this);
     this.createArticle = this.createArticle.bind(this);
     this.deleteAuthor = this.deleteAuthor.bind(this);
     this.createAuthor = this.createAuthor.bind(this);
   }
 
-  // TODO: Delay rendering until we have everything
-  // To avoid checking authors in admin container
-
   componentDidMount() {
     fetch("http://localhost:8080/articles/by-date")
-    .then(res => res.json())
-    .then(articles => this.setState({articles}))
-    .catch(err => console.error);
-
+      .then(res => res.json())
+      .then(articles => this.setState({articles}))
+      .catch(err => console.error);
     fetch("http://localhost:8080/authors")
-    .then(res => res.json())
-    .then(authors => this.setState({authors: authors._embedded.authors}))
-    .catch(err => console.error);
+      .then(res => res.json())
+      .then(authors => this.setState({authors: authors._embedded.authors}))
+      .catch(err => console.error);
   }
 
   setCategory(category){
@@ -54,10 +51,10 @@ class NewsContainer extends Component {
   main(props) {
     return (
       <Main
-      categories = {this.state.categories}
-      setCategory = {this.setCategory}
-      articles = {this.state.articles}
-      filter={this.state.selectedCategory}
+        categories = {this.state.categories}
+        setCategory = {this.setCategory}
+        articles = {this.state.articles}
+        filter={this.state.selectedCategory}
       />
     )
   }
@@ -65,16 +62,16 @@ class NewsContainer extends Component {
   admin(props) {
     return (
       <AdminContainer
-      articles = {this.state.articles}
-      authors = {this.state.authors}
-      categories= {this.state.categories}
-      selectedArticle = {this.state.selectedArticle}
-      deleteArticle = {this.deleteArticle}
-      createArticle = {this.createArticle}
-      editArticle = {this.editArticle}
-      deleteAuthor = {this.deleteAuthor}
-      createAuthor = {this.createAuthor}
-      submitEditArticle = {this.submitEditArticle}
+        articles = {this.state.articles}
+        authors = {this.state.authors}
+        categories= {this.state.categories}
+        selectedArticle = {this.state.selectedArticle}
+        deleteArticle = {this.deleteArticle}
+        createArticle = {this.createArticle}
+        deleteAuthor = {this.deleteAuthor}
+        createAuthor = {this.createAuthor}
+        selectEditedArticle = {this.selectEditedArticle}
+        submitEditArticle = {this.submitEditArticle}
       />
     )
   }
@@ -85,79 +82,64 @@ class NewsContainer extends Component {
   }
 
   createArticle(article) {
-    if (article.id) delete article.id;
-    article.author = `http://localhost:8080/authors/${article.authorId}`
-    fetch('http://localhost:8080/articles', {
-      method: 'POST',
-      body: JSON.stringify(article),
-      headers: { 'Content-Type': 'application/json' }
-    })
-    .then(res => res.json())
-    .then(newArticle => {
-      newArticle.author = this.findAuthorById(article.authorId);
-      const articles = [...this.state.articles, newArticle];
-      this.setState({articles});
-
-    })
-    .catch(err => console.error);
+    api.postArticle(article)
+      .then(newArticle => {
+        newArticle.author = this.findAuthorById(article.authorId);
+        const articles = [...this.state.articles, newArticle];
+        this.setState({articles});
+      });
   }
 
   submitEditArticle(article) {
-    console.log("EDITING:");
-    console.log(article);
+    api.patchArticle(article)
+      .then(newArticle => {
+        newArticle.author = this.findAuthorById(article.authorId);
+        let articles = [...this.state.articles];
+        const index = articles.findIndex(a => a.id === article.id);
+        articles[index] = newArticle;
+        this.setState({articles});
+      });
+  }
+
+  selectEditedArticle(article){
+    this.setState({selectedArticle: article});
+  }
+
+  deleteArticle(id) {
+    api.deleteArticle(id);
+    const articles = this.state.articles.filter(a => a.id !== id)
+    this.setState({articles})
   }
 
   createAuthor(author) {
-    fetch('http://localhost:8080/authors', {
-      method: 'POST',
-      body: JSON.stringify(author),
-      headers: { 'Content-Type': 'application/json' }
-    })
-  .then(res => res.json())
-  .then(newAuthor => {
-    const authors = [...this.state.authors, newAuthor];
-    this.setState({authors});
-  })
-  .catch(err => console.error);
-}
+    api.postAuthor(author)
+      .then(newAuthor => {
+        const authors = [...this.state.authors, newAuthor];
+        this.setState({authors});
+      });
+  }
 
-editArticle(article){
-  this.setState({selectedArticle: article});
-}
+  deleteAuthor(id) {
+    api.deleteAuthor(id);
+    const authors = this.state.authors.filter(a => a.id !== id)
+    const articles = this.state.articles.filter(a => a.author.id !== id)
+    this.setState({authors, articles})
+  }
 
-deleteArticle(id) {
-  const articles = this.state.articles.filter(a => a.id !== id)
-  this.setState({articles})
-
-  fetch(`http://localhost:8080/articles/${id}`, {
-    method: 'DELETE'
-  })
-  .catch(err => console.error);
-}
-
-deleteAuthor(id) {
-  const authors = this.state.authors.filter(a => a.id !== id)
-  this.setState({authors})
-  fetch(`http://localhost:8080/authors/${id}`, {
-    method: 'DELETE'
-  })
-  .catch(err => console.error);
-}
-
-render() {
-  return (
-    <Router>
-    <React.Fragment>
-    <Header />
-    <Switch>
-    <Route exact path="/" render={this.main} />
-    <Route exact path="/admin" render={this.admin} />
-    <Route path="/article/:id" render={this.articleDetail} />
-    </Switch>
-    </React.Fragment>
-    </Router>
-  )
-}
+  render() {
+    return (
+      <Router>
+        <React.Fragment>
+          <Header />
+          <Switch>
+            <Route exact path="/" render={this.main} />
+            <Route exact path="/admin" render={this.admin} />
+            <Route path="/article/:id" render={this.articleDetail} />
+          </Switch>
+        </React.Fragment>
+      </Router>
+    )
+  }
 }
 
 export default NewsContainer;

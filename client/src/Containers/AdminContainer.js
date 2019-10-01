@@ -10,14 +10,17 @@ class AdminContainer extends Component {
     if (this.props.authors.length > 0) {
       return(
         <>
-        <AdminArticles articles = {this.props.articles} deleteArticle = {this.props.deleteArticle} editArticle = {this.props.editArticle} />
+        <AdminArticles
+          articles = {this.props.articles}
+          deleteArticle = {this.props.deleteArticle}
+          selectEditedArticle = {this.props.selectEditedArticle} />
         <AdminJournalists authors = {this.props.authors} deleteAuthor = {this.props.deleteAuthor} />
         <AdminArticlesForm
-        categories = {this.props.categories} 
-        authors = {this.props.authors}
-        selectedArticle = {this.props.selectedArticle}
-        createArticle = {this.props.createArticle}
-        submitEditArticle = {this.props.submitEditArticle} />
+          categories = {this.props.categories} 
+          authors = {this.props.authors}
+          selectedArticle = {this.props.selectedArticle}
+          createArticle = {this.props.createArticle}
+          submitEditArticle = {this.props.submitEditArticle} />
         <AdminJournalistsForm createAuthor = {this.props.createAuthor} />
         </>
       )
@@ -25,6 +28,6 @@ class AdminContainer extends Component {
     return null;
   }
 
-  }
+}
 
-  export default AdminContainer;
+export default AdminContainer;
