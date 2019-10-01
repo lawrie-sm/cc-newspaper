@@ -151,6 +151,28 @@ public class DataLoader implements ApplicationRunner {
                 reg,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.UK);
 
+        Article article8 = new Article("Cristiano Ronaldo and Lionel Messi: Is their era of dominance heading towards its end?",
+                "Seven weeks into the season, Cristiano Ronaldo and Lionel Messi have scored only three club goals between them.",
+                "Seven weeks into the season, Cristiano Ronaldo and Lionel Messi have scored only three club goals between them.\n" +
+                        "\n" +
+                        "The pair have dominated football for the past decade, with a combined 1,369 goals, 10 Ballons d'Or and nine Champions League titles.\n" +
+                        "\n" +
+                        "But with Barcelona and Argentina's Messi, 32, suffering from multiple injuries already this season and Juventus and Portugal forward Ronaldo, 34, no longer winning golden boots, are we witnessing the beginning of the end of the pair's era of dominance?",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.SPORT);
+
+        Article article8 = new Article("Cristiano Ronaldo and Lionel Messi: Is their era of dominance heading towards its end?",
+                "Seven weeks into the season, Cristiano Ronaldo and Lionel Messi have scored only three club goals between them.",
+                "Seven weeks into the season, Cristiano Ronaldo and Lionel Messi have scored only three club goals between them.\n" +
+                        "\n" +
+                        "The pair have dominated football for the past decade, with a combined 1,369 goals, 10 Ballons d'Or and nine Champions League titles.\n" +
+                        "\n" +
+                        "But with Barcelona and Argentina's Messi, 32, suffering from multiple injuries already this season and Juventus and Portugal forward Ronaldo, 34, no longer winning golden boots, are we witnessing the beginning of the end of the pair's era of dominance?",
+                reg,
+                new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.SPORT);
+
+
+
         authorRepo.save(reg);
         articleRepo.save(article1);
         articleRepo.save(article2);
@@ -159,6 +181,7 @@ public class DataLoader implements ApplicationRunner {
         articleRepo.save(article5);
         articleRepo.save(article6);
         articleRepo.save(article7);
+        articleRepo.save(article8);
     }
 
 }
