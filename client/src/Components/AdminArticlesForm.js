@@ -1,62 +1,83 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const AdminArticlesForm = ({categories, authors}) => {
+class AdminArticlesForm extends Component {
 
-  const categoryNodes = categories.map((category, index) => (
-    <option key={index}>{category}</option>
-  ))
+  constructor(props) {
+    super(props);
+    this.state = {
+      category: this.props.categories[0],
+      authorId: this.props.authors[0].id
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  const authorNodes = authors.map((author, index) => (
-    <option key={index}>{author.name}, {author.title}</option>
-  ))
-  return(
-    <>
-    <p>AdminArticlesForm</p>
-    <form action="/" method="post">
-    <div>
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" />
-    </div>
+  handleChange({ target: { value, name } }) {
+    this.setState({[name]: value});
+  }
 
-    <div>
-    <label for="summary">Summary:</label>
-    <input type="text" id="summary" name="summary" />
-    </div>
+  handleSubmit(evt){
+    evt.preventDefault();
+    this.props.createArticle(this.state)
+  }
 
-    <div>
-    <label for="text">Text:</label>
-    <input type="text" id="text" name="text" />
-    </div>
+  render(){
+    const categoryNodes = this.props.categories.map((category, index) => (
+      <option value={category} key={index}>{category}</option>
+    ))
 
-    <div>
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" />
-    </div>
+    const authorNodes = this.props.authors.map((author, index) => (
+      <option value={author.id} key={index}>{author.name}, {author.title}</option>
+    ))
+    return(
+      <>
+      <p>AdminArticlesForm</p>
+      <form onSubmit={this.handleSubmit}>
+      <div>
+      <label htmlFor="title">Title:</label>
+      <input type="text" id="title" name="title" onChange={this.handleChange} required />
+      </div>
 
-    <div>
-    <label for="category">Category:</label>
-    <select name="category">
-    <>
-    {categoryNodes}
-    </>
-    </select>
-    </div>
+      <div>
+      <label htmlFor="summary">Summary:</label>
+      <input type="text" id="summary" name="summary" onChange={this.handleChange} required />
+      </div>
 
-    <div>
-    <label for="author">Author:</label>
-    <select name="author">
-    <>
-    {authorNodes}
-    </>
-    </select>
-    </div>
+      <div>
+      <label htmlFor="text">Text:</label>
+      <input type="text" id="text" name="text" onChange={this.handleChange} required />
+      </div>
 
-    <input type="submit" value="Submit" />
+      <div>
+      <label htmlFor="date">Date:</label>
+      <input type="date" id="date" name="date" onChange={this.handleChange} required/>
+      </div>
 
-    </form>
+      <div>
+      <label htmlFor="category">Category:</label>
+      <select name="category" onChange={this.handleChange} required >
+      <>
+      {categoryNodes}
+      </>
+      </select>
+      </div>
 
-    </>
-  )
+      <div>
+      <label htmlFor="authorId">Author:</label>
+      <select name="authorId" onChange={this.handleChange} required >
+      <>
+      {authorNodes}
+      </>
+      </select>
+      </div>
+
+      <input type="submit" value="Submit" />
+
+      </form>
+
+      </>
+    )
+  }
 }
 
 export default AdminArticlesForm;

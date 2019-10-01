@@ -19,31 +19,42 @@ class NewsContainer extends Component {
     this.main = this.main.bind(this);
     this.admin = this.admin.bind(this);
     this.articleDetail = this.articleDetail.bind(this);
+    this.deleteArticle = this.deleteArticle.bind(this);
+    this.createArticle = this.createArticle.bind(this);
+    this.deleteAuthor = this.deleteAuthor.bind(this);
+    this.createAuthor = this.createAuthor.bind(this);
   }
+
+  // TODO: Delay rendering until we have everything
+  // To avoid checking authors in admin container
 
   componentDidMount() {
     fetch("http://localhost:8080/articles/by-date")
-      .then(res => res.json())
-      .then(articles => this.setState({articles}))
-      .catch(err => console.error);
+    .then(res => res.json())
+    .then(articles => this.setState({articles}))
+    .catch(err => console.error);
 
     fetch("http://localhost:8080/authors")
-      .then(res => res.json())
-      .then(authors => this.setState({authors: authors._embedded.authors}))
-      .catch(err => console.error);
+    .then(res => res.json())
+    .then(authors => this.setState({authors: authors._embedded.authors}))
+    .catch(err => console.error);
   }
 
   setCategory(category){
     this.setState({selectedCategory: category})
   }
 
+  findAuthorById(id) {
+    return this.state.authors.find(a => a.id === id);
+  }
+
   main(props) {
     return (
       <Main
-        categories = {this.state.categories}
-        setCategory = {this.setCategory}
-        articles = {this.state.articles}
-        filter={this.state.selectedCategory}
+      categories = {this.state.categories}
+      setCategory = {this.setCategory}
+      articles = {this.state.articles}
+      filter={this.state.selectedCategory}
       />
     )
   }
@@ -51,32 +62,87 @@ class NewsContainer extends Component {
   admin(props) {
     return (
       <AdminContainer
-        articles = {this.state.articles}
-        authors = {this.state.authors}
-        categories= {this.state.categories}
+      articles = {this.state.articles}
+      authors = {this.state.authors}
+      categories= {this.state.categories}
+      deleteArticle = {this.deleteArticle}
+      createArticle = {this.createArticle}
+      deleteAuthor = {this.deleteAuthor}
+      createAuthor = {this.createAuthor}
       />
     )
   }
 
   articleDetail(props) {
-    const article = this.state.articles.find(a => a.id == props.match.params.id);
+    const article = this.state.articles.find(a => a.id === props.match.params.id);
     return <ArticleDetail article={article} />
   }
 
-  render() {
-    return (
-      <Router>
-        <React.Fragment>
-          <Header />
-          <Switch>
-            <Route exact path="/" render={this.main} />
-            <Route exact path="/admin" render={this.admin} />
-            <Route path="/article/:id" render={this.articleDetail} />
-          </Switch>
-        </React.Fragment>
-      </Router>
-    )
+  createArticle(article) {
+    article.author = `http://localhost:8080/authors/${article.authorId}`
+    article.category = article.category.toUpperCase();
+    fetch('http://localhost:8080/articles', {
+      method: 'POST',
+      body: JSON.stringify(article),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(res => res.json())
+    .then(newArticle => {
+      newArticle.author = this.findAuthorById(article.authorId);
+      const articles = [...this.state.articles, newArticle];
+      console.log("New state:")
+      console.log(articles);
+      this.setState({articles});
+    })
+    .catch(err => console.error);
   }
+
+  createAuthor(author) {
+    fetch('http://localhost:8080/authors', {
+      method: 'POST',
+      body: JSON.stringify(author),
+      headers: { 'Content-Type': 'application/json' }
+    })
+  .then(res => res.json())
+  .then(newAuthor => {
+    const authors = [...this.state.authors, newAuthor];
+    this.setState({authors});
+  })
+  .catch(err => console.error);
+}
+
+deleteArticle(id) {
+  const articles = this.state.articles.filter(a => a.id !== id)
+  this.setState({articles})
+  fetch(`http://localhost:8080/articles/${id}`, {
+    method: 'DELETE'
+  })
+  .catch(err => console.error);
+}
+
+deleteAuthor(id) {
+  const authors = this.state.authors.filter(a => a.id !== id)
+  this.setState({authors})
+  fetch(`http://localhost:8080/authors/${id}`, {
+    method: 'DELETE'
+  })
+  .catch(err => console.error);
+}
+
+render() {
+  return (
+    <Router>
+    <React.Fragment>
+    <Header />
+    <Switch>
+    <Route exact path="/" render={this.main} />
+    <Route exact path="/admin" render={this.admin} />
+    <Route path="/article/:id" render={this.articleDetail} />
+    </Switch>
+    </React.Fragment>
+    </Router>
+  )
+}
 }
 
 export default NewsContainer;
