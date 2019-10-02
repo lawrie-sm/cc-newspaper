@@ -24,7 +24,9 @@ const ArticleListItem = ({article, imageLink}) => (
       </div>
     </div>
   </li>
+  <br />
     <hr align="left" />
+    <br />
     </>
 )
 
