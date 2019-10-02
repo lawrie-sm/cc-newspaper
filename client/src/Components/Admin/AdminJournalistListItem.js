@@ -1,10 +1,11 @@
 import React from 'react';
+import './Lists.css';
 
 const AdminJournalistListItem = ({author, handleDelete, handleEdit}) => (
   <>
   <p>{author.name}, {author.title}</p>
-  <button onClick = {handleEdit} >edit</button>
-  <button onClick = {handleDelete} >delete</button>
+  <button onClick = {handleEdit} >Edit</button>
+  <button onClick = {handleDelete} >Delete</button>
   </>
 )
 
