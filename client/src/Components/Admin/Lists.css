@@ -1,0 +1,15 @@
+button {
+  border: 2px solid #e7e7e7;
+  background-color: #e7e7e7;
+  margin: 0.5em;
+  margin-left: 0;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+  background-color: white;
+}

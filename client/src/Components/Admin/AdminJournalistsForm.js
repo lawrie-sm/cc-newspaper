@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './AdminForms.css';
 
 class AdminJournalistsForm extends Component {
   constructor(props) {
@@ -14,8 +15,8 @@ class AdminJournalistsForm extends Component {
 
   componentDidUpdate(prevProps){
     if (this.props.selectedAuthor &&
-        this.props.selectedAuthor !==prevProps.selectedAuthor){
-        this.setState(this.props.selectedAuthor)
+      this.props.selectedAuthor !==prevProps.selectedAuthor){
+      this.setState(this.props.selectedAuthor)
     }
   }
 
@@ -44,21 +45,26 @@ class AdminJournalistsForm extends Component {
 
   render() {
     return(
-      <>
-      <p>AdminJournalistsForm</p>
       <form>
-        <div>
-          <label htmlFor="title">Title:</label>
-          <input value={this.state.title} type="text" id="title" name="title" onChange={this.handleChange} required />
+        <div className="form-container">
+          <div className="form-column">
+            <label htmlFor="title">Title:</label>
+            <label htmlFor="name">Name:</label>
+          </div>
+          <div className="form-column">
+            <input value={this.state.name} type="text" id="name" name="name" onChange={this.handleChange} required />
+            <input value={this.state.title} type="text" id="title" name="title" onChange={this.handleChange} required />
+          </div>
         </div>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input value={this.state.name} type="text" id="name" name="name" onChange={this.handleChange} required />
+        <div className="form-container">
+          <div className="form-column">
+            <input className="form-button" onClick={this.handleSubmit} type="submit" value="Submit" />
+          </div>
+          <div className="form-column">
+            <input className="form-button" onClick={this.handleEditSubmit} type="submit" value="Update" />
+          </div>
         </div>
-        <input onClick={this.handleSubmit} type="submit" value="Submit" />
-        <input onClick={this.handleEditSubmit} type="submit" value="Update" />
       </form>
-      </>
     )}
 }
 

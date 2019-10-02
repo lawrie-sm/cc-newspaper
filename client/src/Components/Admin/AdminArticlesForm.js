@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './AdminForms.css';
 
 class AdminArticlesForm extends Component {
 
@@ -58,50 +59,40 @@ class AdminArticlesForm extends Component {
     ))
 
     return(
-      <>
-      <p>AdminArticlesForm</p>
       <form>
-        <div>
-          <label htmlFor="title">Title:</label>
-          <input type="text" id="title" name="title" value={this.state.title} onChange={this.handleChange} required />
+        <div className="form-container">
+          <div className="form-column">
+            <label htmlFor="title">Title:</label>
+            <label htmlFor="summary">Summary:</label>
+            <label htmlFor="text">Text:</label>
+            <label htmlFor="date">Date:</label>
+            <label htmlFor="category">Category:</label>
+            <label htmlFor="authorId">Author:</label>
+          </div>
+          <div className="form-column">
+            <input type="text" id="title" name="title" value={this.state.title} onChange={this.handleChange} required />
+            <input type="text" id="summary" name="summary" value={this.state.summary} onChange={this.handleChange} required />
+            <input type="text" id="text" name="text" value={this.state.text} onChange={this.handleChange} required />
+            <input type="date" id="date" name="date" value={this.state.date} onChange={this.handleChange} required/>
+            <select className="form-select" name="category" value={this.state.category} onChange={this.handleChange} required >
+                {categoryNodes}
+            </select>
+            <select className="form-select" name="authorId" value={this.state.authorId} onChange={this.handleChange} required >
+                {authorNodes}
+            </select>
+          </div>
         </div>
 
-        <div>
-          <label htmlFor="summary">Summary:</label>
-          <input type="text" id="summary" name="summary" value={this.state.summary} onChange={this.handleChange} required />
+        <div className="form-container">
+          <div className="form-column">
+            <input className="form-button" onClick={this.handleSubmit} type="submit" value="Submit" />
+          </div>
+          <div className="form-column">
+            <input className="form-button" onClick={this.handleEditSubmit} type="submit" value="Update" />
+          </div>
         </div>
-
-        <div>
-          <label htmlFor="text">Text:</label>
-          <input type="text" id="text" name="text" value={this.state.text} onChange={this.handleChange} required />
-        </div>
-
-        <div>
-          <label htmlFor="date">Date:</label>
-          <input type="date" id="date" name="date" value={this.state.date} onChange={this.handleChange} required/>
-        </div>
-
-        <div>
-          <label htmlFor="category">Category:</label>
-          <select name="category" value={this.state.category} onChange={this.handleChange} required >
-              {categoryNodes}
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="authorId">Author:</label>
-          <select name="authorId" value={this.state.authorId} onChange={this.handleChange} required >
-              {authorNodes}
-          </select>
-        </div>
-
-        <input onClick={this.handleSubmit} type="submit" value="Submit" />
-        <input onClick={this.handleEditSubmit} type="submit" value="Update" />
       </form>
-
-      </>
     )
-
   }
 }
 
