@@ -31,5 +31,3 @@ const ArticleListItem = ({article, imageLink}) => (
 )
 
 export default ArticleListItem;
-
-// "../../Images/" + article.category.toLowerCase() + ".jpg"

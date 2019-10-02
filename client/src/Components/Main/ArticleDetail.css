@@ -1,0 +1,18 @@
+h1.headline{
+  font-size: 44px;
+  margin: 0;
+  padding: 0;
+}
+h3{
+  font-size: 24px;
+}
+h3.article-summary{
+  font-family: freight-display-pro, serif;
+  font-weight: 700;
+  font-style: normal;
+}
+h3.body{
+  font-family: freight-display-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+}

@@ -143,7 +143,7 @@ class NewsContainer extends Component {
 
   renderArticleDetail(props) {
     const article = this.state.articles.find(a => a.id == props.match.params.id);
-    return <ArticleDetail article={article} />
+    return <ArticleDetail article={article} imageLink={this.state.images[article.category]} />
   }
 
   renderAdmin(props) {

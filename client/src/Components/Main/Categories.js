@@ -13,7 +13,7 @@ const Categories = (props) => {
 
   return(
     <div class="categories-container">
-      <button value="" onClick={handleClick} className={props.selectedCategory == "" ? "selectedCategoryButton" : "categoryButton" }>All</button>
+      <button value="" onClick={handleClick} className={props.selectedCategory == "" ? "selectedCategoryButton" : "categoryButton" }>ALL</button>
       {buttonNodes}
     </div>
   )
