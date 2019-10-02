@@ -31,14 +31,12 @@ public class DataLoader implements ApplicationRunner {
         Author rana = new Author("reporter", "Rana Akbar");
         Author chris = new Author("editor", "Chris Mccauley");
         Author azamat = new Author("editor", "Azamat Bagatov");
-        Author reg = new Author("editor", "reg");
         authorRepo.save(andy);
         authorRepo.save(lawrie);
         authorRepo.save(azamat);
         authorRepo.save(chris);
         authorRepo.save(rana);
         authorRepo.save(borat);
-        authorRepo.save(reg);
         Article article1 = new Article("Be More Chill: The word-of-mouth hit musical now heading to London\n",
                 "A new musical which became a word-of-mouth hit in the US is set to open in London after a successful Broadway run",
                 "Be More Chill, which has been praised for attracting a new teen audience to the theatre, will open at The Other Palace in February, the BBC can reveal.\n" +
