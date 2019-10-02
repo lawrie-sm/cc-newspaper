@@ -29,12 +29,14 @@ class AdminJournalistsForm extends Component {
   }
 
   handleSubmit(evt){
+    evt.preventDefault();
     if (this.inputsAreValid()) {
       this.props.createAuthor(this.state)
     }
   }
 
   handleEditSubmit(evt){
+    evt.preventDefault();
     if (this.inputsAreValid()) {
       this.props.submitEditAuthor(this.state)
     }
