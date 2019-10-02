@@ -15,7 +15,7 @@ const ArticleDetail = ({article, imageLink}) => (
           <h3 className="article-summary">{article.summary}</h3>
       <div className="article-body">
         <div>
-        <h3 className="body"><img className="article-image" src={imageLink} width="250" height="auto" align="right" />{article.text}</h3>
+        <p className="body"><img className="article-image" src={imageLink} width="250" height="auto" align="right" />{article.text}</p>
         </div>
       </div>
     </div>
