@@ -1,10 +1,13 @@
 import React from 'react';
 import ArticleListItem from './ArticleListItem';
 
-const ArticleList = ({filter, articles}) => {
+const ArticleList = ({filter, articles, images}) => {
   const articleNodes = articles.map((article, index) => (
-    filter.toUpperCase() === article.category || filter === '' ?
-      <ArticleListItem key={index} article={article} /> : null
+    filter === article.category || filter === '' ?
+      <ArticleListItem
+      key={index}
+      article={article}
+      imageLink={images[article.category]} /> : null
   ));
 
   return (

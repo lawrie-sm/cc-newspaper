@@ -3,13 +3,8 @@ import Moment from 'react-moment';
 import {Link} from 'react-router-dom';
 import './ArticleListItem.css';
 
-function importAll(r) {
-  return r.keys().map(r);
-}
 
-const images = importAll(require.context('../../Images/', false, /\.jpg$/));
-
-const ArticleListItem = ({article}) => (
+const ArticleListItem = ({article, imageLink}) => (
   <>
   <li>
     <div className="article-container">
@@ -25,7 +20,7 @@ const ArticleListItem = ({article}) => (
       <h3 className="summary">{article.summary}</h3>
       </div>
       <div className="article-list-item-image">
-    <img src={images[0]} width="250" height="auto" />
+    <img src={imageLink} width="250" height="auto" />
       </div>
     </div>
   </li>

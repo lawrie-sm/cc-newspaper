@@ -17,7 +17,20 @@ class NewsContainer extends Component {
       selectedCategory: "",
       selectedArticle: {},
       selectedAuthor: {},
+      images: {}
     };
+
+    function importAll(img) {
+      return img.keys().map(img);
+    }
+    const imageLinks = importAll(require.context('../Images/', false, /\.jpg/));
+    const images = {}
+    imageLinks.forEach(link => {
+      const category = link.match(/\/(?:.*)\/(?:.*)\/(\w*)\./i)[1].toUpperCase()
+      images[category] = link
+    });
+    this.state.images = images;
+
     this.setCategory = this.setCategory.bind(this);
     this.main = this.main.bind(this);
     this.admin = this.admin.bind(this);
@@ -43,6 +56,7 @@ class NewsContainer extends Component {
       .catch(err => console.error);
   }
 
+
   setCategory(category){
     this.setState({selectedCategory: category})
   }
@@ -59,6 +73,7 @@ class NewsContainer extends Component {
       articles = {this.state.articles}
       filter={this.state.selectedCategory}
       selectedCategory={this.state.selectedCategory}
+      images={this.state.images}
       />
     )
   }
@@ -137,7 +152,7 @@ class NewsContainer extends Component {
     const selectedAuthor = this.findAuthorById(id);
     this.setState({selectedAuthor});
   }
-  
+
   submitEditAuthor(author) {
     api.patchAuthor(author)
       .then(newAuthor => {
