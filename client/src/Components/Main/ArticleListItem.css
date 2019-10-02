@@ -2,11 +2,8 @@
   display: flex;
   justify-content: flex-start;
 }
-.details{
-  padding-right: 25px;
-}
 h2.headline{
-  font-size: 30px;
+  font-size: 35px;
   margin: 0 auto;
 }
 h2.headline:hover{
@@ -20,17 +17,28 @@ p{
   font-family: freight-sans-pro, sans-serif;
   font-weight: 600;
   margin: 0;
+  padding-top: 5px;
+}
+p.details{
   padding-bottom: 15px;
+  padding-right: 25px;
+  color: #999999;
+}
+p.category{
+  color: #63c39c;
 }
 h3.summary{
   font-family: freight-display-pro, serif;
   font-weight: 400;
   font-style: italic;
+  font-size: 23px;
   margin: 0 auto;
   padding-bottom: 15px;
 }
 hr{
   border-top: 1px solid #ededed;
+  border-left: none;
+  width: 95%;
 }
 .article-container{
   width: 95%;
