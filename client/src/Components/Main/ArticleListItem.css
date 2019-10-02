@@ -18,7 +18,7 @@ p{
   margin: 0;
   padding-bottom: 15px;
 }
-h3{
+h3.summary{
   font-family: freight-display-pro, serif;
   font-weight: 400;
   font-style: italic;
@@ -27,5 +27,13 @@ h3{
 }
 hr{
   border-top: 1px solid #ededed;
-
+}
+.article-container{
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+}
+.article-list-item-text{
+  padding-right: 40px;
+  width: 800px;
 }
