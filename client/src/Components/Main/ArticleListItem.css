@@ -5,9 +5,13 @@
 .details{
   padding-right: 25px;
 }
-h2{
+h2.headline{
   font-size: 30px;
   margin: 0 auto;
+}
+h2.headline:hover{
+  text-decoration: underline;
+  text-decoration-color: #63c39c;
 }
 li{
   list-style: none;
