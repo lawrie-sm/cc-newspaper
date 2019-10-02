@@ -25,10 +25,18 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        Author reg = new Author("reporter", "reg");
-        Author katie = new Author("editor", "katie");
-        authorRepo.save(reg);
-        authorRepo.save(katie);
+        Author andy = new Author("reporter", "Andy Mckay");
+        Author lawrie = new Author("reporter", "Lawrie Scott-McFarlane");
+        Author borat = new Author("reporter", "Borat Sagdiyev");
+        Author rana = new Author("reporter", "Rana Akbar");
+        Author chris = new Author("editor", "Chris Mccauley");
+        Author azamat = new Author("editor", "Azamat Bagatov");
+        authorRepo.save(andy);
+        authorRepo.save(lawrie);
+        authorRepo.save(azamat);
+        authorRepo.save(chris);
+        authorRepo.save(rana);
+        authorRepo.save(borat);
         Article article1 = new Article("Be More Chill: The word-of-mouth hit musical now heading to London\n",
                 "A new musical which became a word-of-mouth hit in the US is set to open in London after a successful Broadway run",
                 "Be More Chill, which has been praised for attracting a new teen audience to the theatre, will open at The Other Palace in February, the BBC can reveal.\n" +
@@ -48,7 +56,7 @@ public class DataLoader implements ApplicationRunner {
                         "As a result, the show was revived by its creators the following year, first as an off-Broadway production before it transferred to the Lyceum Theatre for a run on Broadway.\n" +
                         "\n" +
                         "\"I'm a little older and so I'm used to word-of-mouth being telling my friends about an amazing show or movie,\" Be More Chill's producer Jerry Goehring tells BBC News. \"And in the old days we had radio that would play a song and it would be popular. Word of mouth would happen in different ways.\n",
-                katie,
+                andy,
                 new GregorianCalendar(2019, Calendar.JANUARY, 10),ArticleCategory.CULTURE );
 
         Article article2 = new Article("Claim over Boris Johnson's behaviour 'deeply concerning",
@@ -65,7 +73,7 @@ public class DataLoader implements ApplicationRunner {
                         "In her first column for the Sunday Times - published on the eve of the Conservative conference in Manchester - Ms Edwardes said she was seated on Mr Johnson's right at the lunch, held at the Spectator magazine's offices.\n" +
                         "\n" +
                         "Mr Johnson was editor of the magazine at the time.\n",
-                katie,
+                lawrie,
                 new GregorianCalendar(2019, Calendar.FEBRUARY, 10 ), ArticleCategory.UK);
 
         Article article3 = new Article("Russian GP: Can Ferrari control Charles Leclerc and Sebastian Vettel fall-out?\n",
@@ -81,7 +89,7 @@ public class DataLoader implements ApplicationRunner {
                         "There is so much at stake here - a proud champion fighting for his position in the team, which is patently under threat from an extravagantly talented youngster, and a team boss struggling to contain the potentially volcanic mix when two alphas are in the same cage.\n" +
                         "\n" +
                         "In the end, the way the race turned out, Ferrari were able to keep a lid on the situation - publicly at least. But as the dust settled afterwards, from what was not said as much as what was, it was hard to believe that the matter would rest there.",
-                katie,
+                azamat,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.SPORT);
 
         Article article4 = new Article("Saudi crown prince warns of 'Iran threat' to global oil",
@@ -99,7 +107,7 @@ public class DataLoader implements ApplicationRunner {
                         "The prince, who is considered the de facto ruler of Saudi Arabia, is suspected of personally targeting Mr Khashoggi, a Saudi journalist critical of the government in Riyadh.\n" +
                         "\n" +
                         "Mr Khashoggi was killed in Saudi Arabia's consulate in Turkey on 2 October 2018.\n",
-                reg,
+                borat,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
 
         Article article5 = new Article("Leicester 5-0 Newcastle: No need for Newcastle to panic yet - Micah Richards analysis",
@@ -112,7 +120,7 @@ public class DataLoader implements ApplicationRunner {
                         "\n" +
                         "Newcastle's complete surrender' angers Bruce\n" +
                         "They were actually trying to get out to the ball but Leicester had too much quality in possession. Before Newcastle knew it, they were kind of burnt out, and that is when the game really got away from them.",
-                reg,
+                rana,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.SPORT);
 
         Article article6 = new Article("Jess Phillips abuse: Police called to MP's home three times",
@@ -137,7 +145,7 @@ public class DataLoader implements ApplicationRunner {
                         "Ms Phillips said she \"would not claim\" she was always \"well-tempered\" in Parliament.\n" +
                         "\n" +
                         "\"I just wish that we could all temper our language and start talking to each other reasonably about a very difficult issue [Brexit],\" she said.\n",
-                reg,
+                chris,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.UK);
 
 
@@ -152,7 +160,7 @@ public class DataLoader implements ApplicationRunner {
                         "The government wants a deal with the backstop removed. That's the measure aimed at preventing any possibility of border posts and checks between Northern Ireland and the Republic of Ireland.\n" +
                         "There has been some discussion that a possible option could be to go for a Northern Ireland-only backstop. In other words, Northern Ireland would remain more closely tied to the EU than the rest of the UK.\n" +
                         "Critics say that would effectively mean a border in the Irish Sea. When she was in office, Theresa May said that was something no British prime minister could accept.",
-                reg,
+                borat,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.UK);
 
         Article article8 = new Article("Cristiano Ronaldo and Lionel Messi: Is their era of dominance heading towards its end?",
@@ -162,7 +170,7 @@ public class DataLoader implements ApplicationRunner {
                         "The pair have dominated football for the past decade, with a combined 1,369 goals, 10 Ballons d'Or and nine Champions League titles.\n" +
                         "\n" +
                         "But with Barcelona and Argentina's Messi, 32, suffering from multiple injuries already this season and Juventus and Portugal forward Ronaldo, 34, no longer winning golden boots, are we witnessing the beginning of the end of the pair's era of dominance?",
-                reg,
+                andy,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.SPORT);
 
 
@@ -187,7 +195,7 @@ public class DataLoader implements ApplicationRunner {
                         "Since being one of the few on-pitch positives, aged just 20, as England crashed out of the 2011 World Cup, his list of misdemeanours and misfortunes have been long and varied.\n" +
                         "\n" +
                         "They include jumping off a ferry into Auckland harbour, making a rabbit ears sign behind then-Prime Minister David Cameron's head, punching Chris Ashton, tearing his hamstring, serious problems with both knees, assaulting two female police officers and a taxi driver, and returning to the England hotel drunk during a pre-season training camp.",
-                reg,
+                rana,
                 new GregorianCalendar(2019, Calendar.OCTOBER, 1), ArticleCategory.SPORT);
 
         Article article10 = new Article("Wales school sex education classes 'should be compulsory'",
@@ -198,7 +206,7 @@ public class DataLoader implements ApplicationRunner {
                         "The education minister will decide soon whether to make new-look relationships and sexuality education (RSE) compulsory for three to 16-year-olds as part of Wales' new curriculum.\n" +
                         "\n" +
                         "An announcement is expected this week.",
-                reg,
+                azamat,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.EDUCATION);
 
         Article article11 = new Article("'Sadfishing' social media warning from school heads",
@@ -213,7 +221,7 @@ public class DataLoader implements ApplicationRunner {
                         "It indicated 27% of head teachers in England had to deal with problems related to online bullying every week - compared with an international average of 3%.\n" +
                         "Chris Jeffery, head teacher of Bootham School, in north Yorkshire, who chairs the HMC's wellbeing working group, said social media and mobile technology were now an \"inescapable aspect of the landscape of the lives of young people\".\n" +
                         "\"Given the nature of that technology, trends are fast-moving and it is crucial that educators and parents have regular insights into how young people are using their devices,\" he said.\n",
-                reg,
+                borat,
                 new GregorianCalendar(2019, Calendar.OCTOBER, 1), ArticleCategory.EDUCATION);
 
         Article article12= new Article("Is social media causing childhood depression?",
@@ -227,19 +235,19 @@ public class DataLoader implements ApplicationRunner {
                         "\"He reported a significant improvement in his wellbeing and, after six months, I had a letter from his mother saying he was happier at school and integrated into the local community.\"\n" +
                         "\n" +
                         "That and similar cases have led him to question the role social media plays in the lives of young people.",
-                reg,
+                chris,
                 new GregorianCalendar(2019, Calendar.FEBRUARY, 10), ArticleCategory.EDUCATION);
 
         Article article13= new Article("Ten films to watch this October",
                 "Including The Shining's sequel Doctor Sleep, Joker, and the Palme d’Or-winning Parasite, Nicholas Barber picks the movies not to be missed this month.",
                 "Joker won the top prize at this year’s Venice Film Festival, and Joaquin Phoenix is bound to get an Oscar nomination for his scary yet sympathetic central performance. All in all, that’s not bad going for the origin story of a DC Comics’ supervillain. But Todd Phillips’s film is dingier and nastier than the average Batman blockbuster. Set in the 1970s in rundown New York – sorry, Gotham City – it’s a tribute to two of Martin Scorsese’s urban-decay dramas, Taxi Driver and The King of Comedy, and it even has a cameo by their star, Robert De Niro. Does it match up to Scorsese’s own masterpieces? Perhaps not, but Xan Brooks from the Guardian believes that this “gloriously daring and explosive film” is “a tale that’s almost as twisted as the man at its centre, bulging with ideas and pitching towards anarchy”.",
-                reg,
+                lawrie,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 27), ArticleCategory.CULTURE);
 
         Article article14= new Article("Ten books to read in October",
                 "From a head-spinning spy novel to a riveting memoir, Jane Ciabattari picks out some great reads for the month ahead.",
                 "Le Carré’s head-spinning new novel is inspired by recent tumultuous global events. Nat, 47, is back in London with his human-rights-lawyer wife Prue, after 25 years running agents in Britain’s Secret Intelligence Service in Moscow, Prague, Bucharest, and other former Soviet strongholds. As one last assignment, Nat is charged with reviving Haven, a London-based Russia outstation he sees as a “dumping ground”. Off-duty, he begins a tactically intricate badminton duel with Ed, a grouchy, distracted young researcher. They settle into a pattern of post-match drinks where Ed rails against Brexit and Trump. Nat even does a bit of matchmaking, introducing Ed to his deputy, Florence. By the time Nat recognises the implications of the radical realignment of the Anglo-American alliance, he finds himself under surveillance.",
-                reg,
+                rana,
                 new GregorianCalendar(2019, Calendar.SEPTEMBER, 30), ArticleCategory.CULTURE);
 
         Article article15= new Article("What will art look like in 20 years?",
@@ -249,7 +257,7 @@ public class DataLoader implements ApplicationRunner {
                         "Reports suggest that by 2040 the impacts of human-caused climate change will be unescapable, making it the big issue at the centre of art and life in 20 years’ time. Artists in the future will wrestle with the possibilities of the post-human and post-Anthropocene – artificial intelligence, human colonies in outer space and potential doom.\n" +
                         "\n" +
                         "The identity politics seen in art around the #MeToo and Black Lives Matter movements will grow as environmentalism, border politics and migration come even more sharply into focus. Art will become increasingly diverse and might not ‘look like art’ as we expect. In the future, once we’ve become weary of our lives being visible online for all to see and our privacy has been all but lost, anonymity may be more desirable than fame. Instead of thousands, or millions, of likes and followers, we will be starved for authenticity and connection. Art could, in turn, become  more collective and experiential, rather than individual.",
-                reg,
+                borat,
                 new GregorianCalendar(2019, Calendar.APRIL, 23), ArticleCategory.CULTURE);
 
         Article article16 = new Article("Volkswagen: Germany's first mass lawsuit begins",
@@ -285,7 +293,7 @@ public class DataLoader implements ApplicationRunner {
                         "It's safe to say its lawyers are already keeping pretty busy at the moment. And in the meantime, the company is trying to turn itself into a leader in the market for electric cars.\n" +
                         "\n" +
                         "Against that background, the group lawsuit may seem for the moment like just another irritation.",
-                reg,
+                andy,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
 
         Article article17 = new Article("Swiss auction off supercars of Equatorial Guinea leader’s son",
@@ -313,7 +321,7 @@ public class DataLoader implements ApplicationRunner {
                         "\n" +
                         "\"Cars like this would be the jewel of any collection, but to have them all together is really quite extraordinary,\" Lynnie Farrant, press officer for auctioneer Bonhams, told the BBC.\n" +
                         "\n",
-                reg,
+                borat,
                 new GregorianCalendar(2019, Calendar.MARCH, 10), ArticleCategory.WORLD);
 
         articleRepo.save(article1);
