@@ -1,0 +1,10 @@
+.admin-container {
+  display: flex;
+  justify-content: space-around;
+  font-family: freight-sans-pro, sans-serif;
+}
+
+.admin-column {
+  padding: 1em;
+  width: 40%;
+}

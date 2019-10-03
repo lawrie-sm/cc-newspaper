@@ -11,6 +11,7 @@ public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
     @Column(name = "title")
@@ -20,7 +21,7 @@ public class Author {
     private String name;
 
     @JsonIgnoreProperties("author")
-    @OneToMany(mappedBy = "author", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "author", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Article> articles;
 
     public Author() {}

@@ -1,5 +1,6 @@
 package com.codeclan.news.news.models;
 
+import com.codeclan.news.news.properties.ArticleCategory;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
@@ -12,6 +13,7 @@ public class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
     @Column(name = "title")
@@ -20,7 +22,7 @@ public class Article {
     @Column(name = "summary")
     private String summary;
 
-    @Column(name = "text")
+    @Column(name = "text", columnDefinition = "TEXT")
     private String text;
 
     @JsonFormat(pattern="yyyy-MM-dd")
@@ -30,17 +32,21 @@ public class Article {
 
     @JsonIgnoreProperties("articles")
     @ManyToOne
-    @JoinColumn(name = "article_id", nullable=false)
+    @JoinColumn(name = "author_id", nullable=false)
     private Author author;
+
+    @Column(name ="category")
+    private ArticleCategory category;
 
     public Article() {}
 
-    public Article(String title, String summary, String text, Author author, Calendar date) {
+    public Article(String title, String summary, String text, Author author, Calendar date, ArticleCategory category) {
         this.title = title;
         this.summary = summary;
         this.text = text;
         this.author = author;
         this.date = date;
+        this.category = category;
     }
 
     public long getId() {
@@ -89,5 +95,13 @@ public class Article {
 
     public void setDate(Calendar date) {
         this.date = date;
+    }
+
+    public ArticleCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ArticleCategory category) {
+        this.category = category;
     }
 }
