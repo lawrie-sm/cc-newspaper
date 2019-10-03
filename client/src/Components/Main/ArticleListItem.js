@@ -10,7 +10,7 @@ const ArticleListItem = ({article, imageLink}) => (
     <div className="article-container">
       <div className="article-list-item-text">
       <Link to={`/article/${article.id}`}>
-      <h2 class="headline"> {article.title} </h2>
+      <h2 className="headline"> {article.title} </h2>
       </Link>
         <div className="article-details">
         <p className="details">{article.author.name}, {article.author.title}</p>

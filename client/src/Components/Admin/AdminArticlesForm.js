@@ -6,8 +6,8 @@ class AdminArticlesForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: "",
-      authorId: 0,
+      category: "WORLD",
+      authorId: "1",
       title: "",
       text: "",
       summary: "",
