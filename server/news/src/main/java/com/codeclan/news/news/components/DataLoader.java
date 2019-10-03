@@ -25,12 +25,12 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        Author andy = new Author("reporter", "Andy Mckay");
-        Author lawrie = new Author("reporter", "Lawrie Scott-McFarlane");
-        Author borat = new Author("reporter", "Borat Sagdiyev");
-        Author rana = new Author("reporter", "Rana Akbar");
-        Author chris = new Author("editor", "Chris Mccauley");
-        Author azamat = new Author("editor", "Azamat Bagatov");
+        Author andy = new Author("Reporter", "Andy Mckay");
+        Author lawrie = new Author("Reporter", "Lawrie Scott-McFarlane");
+        Author borat = new Author("Reporter", "Borat Sagdiyev");
+        Author rana = new Author("Reporter", "Rana Akbar");
+        Author chris = new Author("Editor", "Chris McAuley");
+        Author azamat = new Author("Editor", "Azamat Bagatov");
         authorRepo.save(andy);
         authorRepo.save(lawrie);
         authorRepo.save(azamat);

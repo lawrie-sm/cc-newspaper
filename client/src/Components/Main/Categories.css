@@ -19,6 +19,9 @@
 .selectedCategoryButton {
   background-color:#63c39c;
 }
+.selectedCategoryButton:hover {
+  background-color:#63c39c;
+}
 .categories-container{
   padding: 15px 0px;
   border-bottom: 1px solid #ededed;
